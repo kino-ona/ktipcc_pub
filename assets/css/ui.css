@@ -1,0 +1,1944 @@
+@charset "UTF-8";
+/* global */
+/* WEBFONT */
+@font-face {
+	font-family: "NS DL";
+	src: url("../fonts/NotoSansKR-DemiLight.woff") format("woff"), url("../fonts/NotoSansKR-DemiLight.woff2") format("woff2"), url("../fonts/NotoSansKR-DemiLight.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "NS MD";
+	src: url("../fonts/NotoSansKR-Medium.woff") format("woff"), url("../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium.otf") format("opentype");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "NS BD";
+	src: url("../fonts/NotoSansKR-Bold.woff") format("woff"), url("../fonts/NotoSansKR-Bold.woff2") format("woff2"), url("../fonts/NotoSansKR-Bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+/** RESET **/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
+big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output,
+ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	word-break: keep-all;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+	color: inherit;
+	font-weight: normal;
+}
+
+fieldset, img, textarea {
+	border: 0;
+	outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+
+img {
+	max-width: 100%;
+}
+
+html, body {
+	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	font-size: 16px;
+	color: #000;
+	line-height: 1;
+	letter-spacing: -0.05em;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+address, em {
+	font-style: normal;
+}
+
+table {
+	border-spacing: 0;
+	width: 100%;
+}
+
+iframe {
+	overflow: hidden;
+	border: 0;
+}
+
+input[type=text], input[type=password], input[type=number], input[type=tel], input[type=email] {
+	width: 100%;
+	height: 50px;
+	padding: 13px 15px;
+	background-color: #fff;
+	border: 1px solid #E0E0E0;
+	border-radius: 0;
+	line-height: 1.25;
+	-webkit-appearance: none;
+	color: #000;
+	font-size: 16px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif;
+	line-height: 26px;
+}
+input[type=text]:not([readonly]):not([disabled]):not([aria-invalid=true]):focus, input[type=password]:not([readonly]):not([disabled]):not([aria-invalid=true]):focus, input[type=number]:not([readonly]):not([disabled]):not([aria-invalid=true]):focus, input[type=tel]:not([readonly]):not([disabled]):not([aria-invalid=true]):focus, input[type=email]:not([readonly]):not([disabled]):not([aria-invalid=true]):focus {
+	border-color: #2CBBB6;
+	outline: 0;
+}
+input[type=text][readonly], input[type=password][readonly], input[type=number][readonly], input[type=tel][readonly], input[type=email][readonly] {
+	background-color: #F7F7F7;
+	color: #CBCBCB;
+}
+input[type=text][aria-invalid=true], input[type=password][aria-invalid=true], input[type=number][aria-invalid=true], input[type=tel][aria-invalid=true], input[type=email][aria-invalid=true] {
+	position: relative;
+	padding-right: 60px;
+	border-color: #FF0000;
+}
+input[type=text]:disabled, input[type=password]:disabled, input[type=number]:disabled, input[type=tel]:disabled, input[type=email]:disabled {
+	background-color: #F7F7F7;
+	color: #CBCBCB;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	min-height: 120px;
+	background-color: #fff;
+	border: 1px solid #E0E0E0;
+	-webkit-appearance: none;
+	font-size: 16px;
+	resize: none;
+	color: #000;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif;
+}
+textarea:not([readonly]):not([disabled]):not([aria-invalid=true]):focus {
+	border-color: #2CBBB6;
+}
+textarea[readonly] {
+	background-color: #F7F7F7;
+	color: #CBCBCB;
+}
+textarea[aria-invalid=true] {
+	position: relative;
+	padding-right: 60px;
+	border-color: #FF0000;
+}
+textarea:disabled {
+	background-color: #F7F7F7;
+	color: #CBCBCB;
+}
+textarea ::-webkit-input-placeholder {
+	font-size: 16px;
+	color: #CBCBCB;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+textarea ::-moz-placeholder {
+	font-size: 16px;
+	color: #CBCBCB;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+textarea ::-moz-placeholder {
+	font-size: 16px;
+	color: #CBCBCB;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	font-size: 16px;
+	color: #CBCBCB;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+::-moz-placeholder {
+	font-size: 16px;
+	color: #CBCBCB;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+::-moz-placeholder {
+	font-size: 16px;
+	color: #CBCBCB;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+input, button, select {
+	vertical-align: middle;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+input[type=checkbox]:not(.auth__form) + label,
+input[type=radio]:not(.auth__form) + label {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	position: relative;
+	min-height: 25px;
+	padding-left: 35px;
+	color: #000;
+	font-size: 18px;
+	line-height: 24px;
+}
+input[type=checkbox]:not(.auth__form) + label:before,
+input[type=radio]:not(.auth__form) + label:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 25px;
+	height: 25px;
+	background-image: url("../images/icons.png");
+	background-repeat: no-repeat;
+	background-position: -42px -255px;
+	background-size: 180px 300px;
+}
+input[type=checkbox]:checked + label,
+input[type=radio]:checked + label {
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+input[type=checkbox]:checked + label:before,
+input[type=radio]:checked + label:before {
+	background-position: -67px -255px;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	padding: 0 15px;
+	border: 1px solid #E0E0E0;
+	border-radius: 0;
+	color: #000;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif;
+	background-color: #fff;
+	background-image: url(../images/bg_select.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 92% center;
+	background-color: #fff;
+	outline: none;
+	line-height: 3;
+	font-size: 16px;
+	cursor: pointer;
+}
+select:disabled {
+	background-color: #F7F7F7;
+	color: #CBCBCB;
+}
+select[readonly] {
+	background-color: #F7F7F7;
+	color: #CBCBCB;
+}
+select:not([readonly]):not([disabled]):not([aria-invalid=true]):focus {
+	border-color: #2CBBB6;
+}
+select[aria-invalid=true] {
+	position: relative;
+	padding-right: 60px;
+	border-color: #FF0000;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+button {
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	background: transparent;
+	line-height: normal;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+	-webkit-appearance: none;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/****** Accessibility ******/
+.a11y {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.skipnavigation {
+	position: relative;
+}
+.skipnavigation a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	z-index: 1;
+	display: block;
+	font-size: 0;
+	background-color: #FFF;
+	text-align: center;
+}
+.skipnavigation a:focus {
+	height: 30px;
+	padding: 4px 0;
+	visibility: visible;
+	font-size: 1em;
+}
+
+/* point */
+.point--cyan {
+	color: #2cbbb6 !important;
+}
+
+/* font family */
+.font--dl {
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.font--md {
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.font--bd {
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+/* header */
+.header {
+	margin-bottom: -34px;
+	padding: 0 calc(constant(safe-area-inset-right) + 20px) 55px calc(constant(safe-area-inset-left) + 20px);
+	padding: 0 calc(env(safe-area-inset-right) + 20px) 55px calc(env(safe-area-inset-left) + 20px);
+	background-color: #2A2E2E;
+}
+
+.header__util {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	min-height: 30px;
+	padding-top: 2px;
+}
+
+.header__back {
+	margin-right: 10px;
+	position: relative;
+	display: inline-block;
+	width: 10px;
+	height: 20px;
+	overflow: hidden;
+}
+.header__back:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
+	margin-left: 4px;
+	border-left: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.header__title {
+	color: #fff;
+	font-size: 16px;
+	line-height: 24px;
+}
+.header__title a {
+	display: block;
+	overflow: hidden;
+	width: 66px;
+	height: 20px;
+	background: url("../images/icons.png") no-repeat -54px -280px;
+	background-size: 180px 300px;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+.header__time {
+	margin-left: auto;
+	color: #777;
+	font-size: 15px;
+	line-height: 21px;
+}
+
+.header__msgs {
+	margin-top: 40px;
+}
+.header__msgs .highlight--cyan {
+	color: #5DDFDE;
+}
+
+.header__msg {
+	color: #fff;
+	font-size: 24px;
+	line-height: 35px;
+}
+.header__msg [class^=highlight] {
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.header__intro {
+	padding-top: 35px;
+	color: #fff;
+	font-size: 32px;
+	line-height: 44px;
+}
+.header__intro > span {
+	display: block;
+	color: inherit;
+}
+.header__intro > span:nth-child(1) {
+	font-size: 18px;
+	line-height: 26px;
+}
+.header__intro > span:nth-child(2) {
+	margin-top: 16px;
+}
+.header__intro > span:nth-child(2) em {
+	color: inherit;
+	font-size: 35px;
+	line-height: 46px;
+	vertical-align: middle;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.header__intro > span:nth-child(2) span {
+	vertical-align: middle;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.header__intro > span:nth-child(3) {
+	margin-top: 36px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+/* contents */
+.contents {
+	position: relative;
+	z-index: 100;
+	padding: 0 calc(constant(safe-area-inset-right) + 20px) calc(constant(safe-area-inset-bottom) + 85px) calc(constant(safe-area-inset-left) + 20px);
+	padding: 0 calc(env(safe-area-inset-right) + 20px) calc(env(safe-area-inset-bottom) + 85px) calc(env(safe-area-inset-left) + 20px);
+}
+
+.contents__inner {
+	background-color: #fff;
+	padding: 30px 25px;
+	-webkit-box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+	        box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+	font-size: 16px;
+	line-height: 24px;
+}
+.contents__inner:not(:first-of-type) {
+	margin-top: 20px;
+}
+.contents__inner .account__set {
+	position: relative;
+}
+.contents__inner .account__set:before, .contents__inner .account__set:after {
+	content: "";
+	position: absolute;
+	top: -15px;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	background-color: #fff;
+	-webkit-box-shadow: inset 0 10px 40px -20px rgba(0, 0, 0, 0.12);
+	        box-shadow: inset 0 10px 40px -20px rgba(0, 0, 0, 0.12);
+}
+.contents__inner .account__set:before {
+	left: -35px;
+}
+.contents__inner .account__set:after {
+	right: -35px;
+}
+.contents__inner .account__set--flat:before, .contents__inner .account__set--flat:after {
+	display: none;
+}
+.contents__inner .service,
+.contents__inner .accordion {
+	margin-left: -25px;
+	margin-right: -25px;
+	margin-bottom: -30px;
+}
+.contents__inner .service:first-child,
+.contents__inner .accordion:first-child {
+	margin-top: -30px;
+}
+.contents__inner .service:not(:first-child),
+.contents__inner .accordion:not(:first-child) {
+	margin-top: 30px;
+	border-top: 1px solid #E0E0E0;
+}
+
+.contents__inner--wave {
+	position: relative;
+}
+.contents__inner--wave:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 5px;
+	background: url("../images/bg_wave.png") repeat-x 0 100%;
+	background-size: 14px 5px;
+}
+
+.contents__etc {
+	margin-top: 25px;
+}
+.contents__etc .contents__row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.contents__etc .contents__row .button-radius {
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+}
+.contents__etc .contents__text {
+	font-size: 16px;
+	line-height: 24px;
+}
+.contents__etc .contents__text--small {
+	font-size: 14px;
+	line-height: 20px;
+}
+.contents__etc .bullet:not(:first-child) {
+	margin-top: 25px;
+}
+
+/* quick-nav */
+.quick-nav {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	height: calc(constant(safe-area-inset-bottom) + 60px);
+	height: calc(env(safe-area-inset-bottom) + 60px);
+	padding-bottom: constant(safe-area-inset-bottom);
+	padding-bottom: env(safe-area-inset-bottom);
+	border-top: 1px solid #E0E0E0;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+.quick-nav__list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100%;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.quick-nav__item {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	text-align: center;
+}
+
+.quick-nav__link {
+	color: #777;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.quick-nav__link--call {
+	color: #2cbbb6;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+/* form */
+.form-field:not(:first-child) {
+	margin-top: 20px;
+}
+
+.form-field__header .form-field__title {
+	margin-bottom: 6px;
+	font-size: 18px;
+	line-height: 26px;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.form-field__header .form-field__desc {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.form-field__label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 26px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.form-field__row:not(:first-child) {
+	margin-top: 20px;
+}
+
+.form-field__inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.form-field__item {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	margin-left: 10px;
+}
+.form-field__item:first-child {
+	margin-left: 0;
+}
+
+.form-field__item--unit {
+	-webkit-box-flex: 0;
+	    -ms-flex: none;
+	        flex: none;
+	width: 15px;
+	margin-left: 0;
+	text-align: center;
+}
+.form-field__item--unit + .form-field__item {
+	margin-left: 0;
+}
+
+.form-field__field {
+	position: relative;
+}
+.form-field__field:not(:first-child) {
+	margin-top: 15px;
+}
+
+.form-field__clear,
+.form-field__error {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	margin-top: -10px;
+	width: 20px;
+	height: 20px;
+	background-image: url("../images/icons.png");
+	background-repeat: no-repeat;
+	background-size: 180px 300px;
+}
+
+.form-field__clear {
+	background-position: -22px -280px;
+}
+
+.form-field__error {
+	background-position: -22px -260px;
+}
+
+.form-field__msg {
+	margin-top: 5px;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.form-field__msg--error {
+	color: #FF0000;
+}
+
+/* bullet */
+.bullet__list:not(:first-child) {
+	margin-top: 15px;
+}
+.bullet__list .bullet__list {
+	margin-top: 0;
+}
+
+.bullet__item {
+	position: relative;
+	color: #777;
+	font-size: 16px;
+	line-height: 24px;
+}
+.bullet__item:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+}
+.bullet__item:not(:first-child) {
+	margin-top: 15px;
+}
+.bullet__item .button-radius,
+.bullet__item .button-underline {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.bullet__item .button-underline {
+	margin-top: 10px;
+}
+.bullet__item .bullet__item {
+	margin-top: 5px;
+}
+.bullet__item .bullet__separate {
+	margin-top: 5px;
+}
+.bullet__item .table:first-of-type {
+	margin-top: 5px;
+}
+.bullet__item .table__list:not(:first-child) {
+	margin-top: 20px;
+}
+
+.bullet__item--info {
+	padding-left: 19px;
+}
+.bullet__item--info:before {
+	top: 6px;
+	width: 15px;
+	height: 15px;
+	background: url("../images/icons.png") no-repeat 0 -265px;
+	background-size: 180px 300px;
+}
+
+.bullet__item--dash {
+	padding-left: 9px;
+}
+.bullet__item--dash:before {
+	content: "-";
+	top: -1px;
+	color: #777;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.bullet__item--circle {
+	padding-left: 8px;
+}
+.bullet__item--circle:before {
+	content: "";
+	top: 10px;
+	width: 3px;
+	height: 3px;
+	border-radius: 100%;
+	background-color: #777;
+}
+.bullet__item--circle .table {
+	margin-left: -8px;
+}
+
+.bullet__item--number .bullet__group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.bullet__item--number .bullet__group .bullet__number {
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+	margin-right: 5px;
+}
+
+.bullet__item--qna .bullet__group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.bullet__item--qna .bullet__group:not(:first-child) {
+	margin-top: 5px;
+}
+.bullet__item--qna .bullet__group:nth-child(odd) {
+	color: #2cbbb6;
+}
+.bullet__item--qna .bullet__group:nth-child(even) {
+	color: #000;
+}
+.bullet__item--qna .bullet__key {
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+	min-width: 25px;
+	margin-right: 5px;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.bullet__item--black {
+	color: #000;
+}
+.bullet__item--black:before {
+	color: #000;
+}
+.bullet__item--black:not([calss*=info]):not([class*=dash]):before {
+	background-color: #000;
+}
+
+/* button */
+.button-rectangle__container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	margin: 20px 0 -10px -10px;
+}
+.button-rectangle__container:first-child {
+	margin-top: 0;
+}
+
+.button-rectangle {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 calc(50% - 10px);
+	        flex: 1 1 calc(50% - 10px);
+	max-width: calc(100% - 10px);
+	min-height: 50px;
+	margin: 0 0 10px 10px;
+	padding: 12px 20px;
+	background-color: #fff;
+	font-size: 18px;
+	line-height: 26px;
+	text-align: center;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.button-rectangle__fill {
+	background-color: #2CBBB6;
+	color: #fff;
+}
+.button-rectangle__fill:not(.button-rectangle__fill--gray)[disabled] {
+	background-color: #CDD1D1;
+	pointer-events: none;
+}
+.button-rectangle__fill:not(.button-rectangle__fill--gray).button-rectangle__fill--active {
+	background-color: #449390;
+}
+.button-rectangle__fill:not(.button-rectangle__fill--gray).button-rectangle__fill--disabled {
+	background-color: #CDD1D1;
+	pointer-events: none;
+}
+
+.button-rectangle__fill--gray {
+	background-color: #999;
+}
+
+.button-rectangle__line {
+	border: 1px solid #000;
+	color: #000;
+}
+
+.button-rectangle--full {
+	-webkit-box-flex: 0;
+	    -ms-flex: none;
+	        flex: none;
+	width: calc(100% - 10px);
+}
+
+.button-radius {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	padding: 8px 13px 9px;
+	border-radius: 20px;
+	background-color: #2CBBB6;
+	color: #fff;
+	font-size: 15px;
+	line-height: 25px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.button-underline {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	color: #2cbbb6;
+	font-size: 16px;
+	line-height: 25px;
+	text-decoration: underline;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+/* ico */
+[class^=ico__] {
+	display: inline-block;
+	background-image: url("../images/icons.png");
+	background-repeat: no-repeat;
+	background-size: 180px 300px;
+}
+
+.ico__20x20 {
+	width: 20px;
+	height: 20px;
+}
+
+.ico__20x20--kb {
+	background-position: 0 -215px;
+}
+
+.ico__20x20--sh {
+	background-position: -20px -215px;
+}
+
+.ico__20x20--nh {
+	background-position: -40px -215px;
+}
+
+.ico__20x20--woori {
+	background-position: -60px -215px;
+}
+
+.ico__20x20--hana {
+	background-position: -80px -215px;
+}
+
+.ico__20x20--ibk {
+	background-position: -100px -215px;
+}
+
+.ico__20x20--sc {
+	background-position: -120px -215px;
+}
+
+.ico__20x20--bnk {
+	background-position: -140px -215px;
+}
+
+.ico__20x20--post {
+	background-position: -160px -215px;
+}
+
+.ico__20x20--kjb {
+	background-position: 0 -235px;
+}
+
+.ico__20x20--kbank {
+	background-position: -20px -235px;
+}
+
+.ico__20x20--dgb {
+	background-position: -40px -235px;
+}
+
+.ico__20x20--citi {
+	background-position: -60px -235px;
+}
+
+.ico__20x20--keb {
+	background-position: -80px -235px;
+}
+
+.ico__30x30 {
+	width: 30px;
+	height: 30px;
+	background-image: url("../images/icons.png");
+	background-size: 180px 300px;
+}
+
+.ico__30x30--internet {
+	background-position: -30px 0;
+}
+
+.ico__30x30--phone {
+	background-position: -60px 0;
+}
+
+.ico__30x30--leased {
+	background-position: -90px 0;
+}
+
+.ico__30x30--counselor {
+	background-position: -90px -30px;
+}
+
+.ico__30x30--reserved {
+	background-position: -120px -30px;
+}
+
+.ico__30x30--blind {
+	background-position: -150px -30px;
+}
+
+.ico__30x30--chat {
+	background-position: -60px -30px;
+}
+
+.ico__30x30--mail {
+	background-position: -30px -30px;
+}
+
+.ico__30x30--noti {
+	background-position: -120px 0;
+}
+
+.ico__30x30--complete {
+	background-position: 0 -30px;
+}
+
+.ico__30x30--fail {
+	background-position: 0 0;
+}
+
+.ico__30x30--call {
+	background-position: 0 -60px;
+}
+
+.ico__30x30--time {
+	background-position: -150px 0;
+}
+
+.ico__30x30--empty {
+	background-position: -90px -60px;
+}
+
+.ico__30x30--kb {
+	background-position: -120px -60px;
+}
+
+.ico__30x30--sh {
+	background-position: -150px -60px;
+}
+
+.ico__30x30--nh {
+	background-position: 0 -90px;
+}
+
+.ico__30x30--woori {
+	background-position: -30px -90px;
+}
+
+.ico__30x30--hana {
+	background-position: -60px -90px;
+}
+
+.ico__30x30--ibk {
+	background-position: -90px -90px;
+}
+
+.ico__30x30--sc {
+	background-position: -120px -90px;
+}
+
+.ico__30x30--bnk {
+	background-position: -150px -90px;
+}
+
+.ico__30x30--post {
+	background-position: 0 -120px;
+}
+
+.ico__30x30--kjb {
+	background-position: -30px -120px;
+}
+
+.ico__30x30--kbank {
+	background-position: -60px -120px;
+}
+
+.ico__30x30--dgb {
+	background-position: -90px -120px;
+}
+
+.ico__30x30--citi {
+	background-position: -120px -120px;
+}
+
+.ico__30x30--keb {
+	background-position: -150px -120px;
+}
+
+/* accordion */
+.accordion__header {
+	position: relative;
+	padding: 18px 65px 18px 25px;
+}
+.accordion__header:not(:first-child) {
+	border-top: 1px solid #E0E0E0;
+}
+.accordion__header .accordion__arrow {
+	right: 25px;
+	top: 50%;
+	margin-top: -5px;
+	position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 10px;
+	overflow: hidden;
+}
+.accordion__header .accordion__arrow:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
+	margin-top: -4px;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+}
+.accordion__header .accordion__separate {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-top: 5px;
+}
+.accordion__header .accordion__separate .accordion__text:nth-child(2) {
+	margin-left: 10px;
+}
+.accordion__header .accordion__separate .accordion__text--lightgray {
+	color: #777;
+	font-size: 14px;
+}
+
+.accordion__header--active + .accordion__panel {
+	display: block;
+}
+.accordion__header--active .accordion__arrow {
+	position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 10px;
+	overflow: hidden;
+}
+.accordion__header--active .accordion__arrow:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
+	margin-top: 4px;
+	border-top: 2px solid #000;
+	border-left: 2px solid #000;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+.accordion__title {
+	display: block;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.accordion__panel {
+	display: none;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 24px;
+}
+.accordion__panel > .accordion__inner {
+	padding: 20px 0;
+	border-top: 1px dotted #000;
+}
+.accordion__panel .accordion__text:not(:first-child) {
+	margin-top: 15px;
+}
+.accordion__panel .accordion__text:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+/* table */
+.table__header {
+	margin-bottom: 5px;
+}
+.table__header .table__title {
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.table__list {
+	border-top: 2px solid #000;
+}
+.table__list th,
+.table__list td {
+	padding: 10px;
+	border-bottom: 1px solid #E0E0E0;
+	background-color: #fff;
+	font-size: 14px;
+	line-height: 22px;
+	vertical-align: middle;
+}
+.table__list th:not(:last-child),
+.table__list td:not(:last-child) {
+	border-right: 1px solid #E0E0E0;
+}
+.table__list th {
+	text-align: center;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.table__list thead + tbody td {
+	text-align: center;
+}
+
+/* modal */
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+}
+.modal .button-rectangle__container {
+	margin-top: 0;
+}
+
+.modal__dimmed {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modal__container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100%;
+}
+
+.modal__body {
+	position: relative;
+	width: calc(100% - 56px);
+	background-color: #fff;
+	-webkit-box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+	        box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+}
+
+.modal__contents {
+	padding: 30px;
+	line-height: 26px;
+}
+
+.modal__title {
+	font-size: 18px;
+	text-align: center;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.modal__desc {
+	text-align: center;
+}
+.modal__desc:not(:first-child) {
+	margin-top: 6px;
+}
+
+/* spinner */
+.spinner {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.53);
+}
+
+.spinner__container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100%;
+}
+
+.spinner__body {
+	position: relative;
+	width: calc(100% - 56px);
+	padding: 30px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+	        box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+}
+
+.spinner__circle {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	width: 1em;
+	height: 1em;
+	font-size: 40px;
+}
+
+.spinner__bar {
+	position: absolute;
+	left: 0.4629em;
+	bottom: 0;
+	width: 0.074em;
+	height: 0.2777em;
+	background-color: transparent;
+	-webkit-transform-origin: center -0.2222em;
+	        transform-origin: center -0.2222em;
+	-webkit-animation: spinner-fade 1s infinite linear;
+	        animation: spinner-fade 1s infinite linear;
+}
+.spinner__bar:nth-child(1) {
+	-webkit-animation-delay: 0s;
+	        animation-delay: 0s;
+	-webkit-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+.spinner__bar:nth-child(2) {
+	-webkit-animation-delay: 0.083s;
+	        animation-delay: 0.083s;
+	-webkit-transform: rotate(30deg);
+	        transform: rotate(30deg);
+}
+.spinner__bar:nth-child(3) {
+	-webkit-animation-delay: 0.166s;
+	        animation-delay: 0.166s;
+	-webkit-transform: rotate(60deg);
+	        transform: rotate(60deg);
+}
+.spinner__bar:nth-child(4) {
+	-webkit-animation-delay: 0.249s;
+	        animation-delay: 0.249s;
+	-webkit-transform: rotate(90deg);
+	        transform: rotate(90deg);
+}
+.spinner__bar:nth-child(5) {
+	-webkit-animation-delay: 0.332s;
+	        animation-delay: 0.332s;
+	-webkit-transform: rotate(120deg);
+	        transform: rotate(120deg);
+}
+.spinner__bar:nth-child(6) {
+	-webkit-animation-delay: 0.415s;
+	        animation-delay: 0.415s;
+	-webkit-transform: rotate(150deg);
+	        transform: rotate(150deg);
+}
+.spinner__bar:nth-child(7) {
+	-webkit-animation-delay: 0.498s;
+	        animation-delay: 0.498s;
+	-webkit-transform: rotate(180deg);
+	        transform: rotate(180deg);
+}
+.spinner__bar:nth-child(8) {
+	-webkit-animation-delay: 0.581s;
+	        animation-delay: 0.581s;
+	-webkit-transform: rotate(210deg);
+	        transform: rotate(210deg);
+}
+.spinner__bar:nth-child(9) {
+	-webkit-animation-delay: 0.664s;
+	        animation-delay: 0.664s;
+	-webkit-transform: rotate(240deg);
+	        transform: rotate(240deg);
+}
+.spinner__bar:nth-child(10) {
+	-webkit-animation-delay: 0.747s;
+	        animation-delay: 0.747s;
+	-webkit-transform: rotate(270deg);
+	        transform: rotate(270deg);
+}
+.spinner__bar:nth-child(11) {
+	-webkit-animation-delay: 0.83s;
+	        animation-delay: 0.83s;
+	-webkit-transform: rotate(300deg);
+	        transform: rotate(300deg);
+}
+.spinner__bar:nth-child(12) {
+	-webkit-animation-delay: 0.913s;
+	        animation-delay: 0.913s;
+	-webkit-transform: rotate(330deg);
+	        transform: rotate(330deg);
+}
+
+.spinner__msg {
+	margin-top: 15px;
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+@-webkit-keyframes spinner-fade {
+	0% {
+		background-color: #2CBBB6;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+@keyframes spinner-fade {
+	0% {
+		background-color: #2CBBB6;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+/* service */
+.service__item:not(:first-child) {
+	border-top: 1px solid #E0E0E0;
+}
+
+.service__link {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding: 20px 30px;
+}
+
+.service__title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-right: 20px;
+	font-size: 20px;
+	line-height: 25px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.service__title .ico__30x30 {
+	margin-right: 10px;
+}
+
+.service__arrow {
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+	margin-left: auto;
+}
+
+.service__arrow--right {
+	position: relative;
+	display: inline-block;
+	width: 10px;
+	height: 20px;
+	overflow: hidden;
+}
+.service__arrow--right:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
+	margin-left: -4px;
+	border-top: 2px solid #000;
+	border-right: 2px solid #000;
+}
+
+/* banner */
+.banner__inner {
+	padding: 20px 0 20px 55px;
+}
+.banner__inner:not(:first-child) {
+	margin-top: 10px;
+}
+
+.banner__title {
+	font-size: 17px;
+	line-height: 20px;
+}
+
+.banner__text {
+	margin-top: 3px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+/* auth */
+.auth__form:checked + .auth__card .auth__check {
+	border-right-color: #2CBBB6;
+	border-bottom-color: #2CBBB6;
+}
+.auth__form:checked + .auth__card .auth__text {
+	color: #000;
+}
+
+.auth__card {
+	display: block;
+	padding: 30px 25px;
+	background-color: #fff;
+	-webkit-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.08);
+	        box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+}
+.auth__card:not(:first-of-type) {
+	margin-top: 20px;
+}
+
+.auth__check {
+	display: block;
+	position: relative;
+	left: 12px;
+	width: 28px;
+	height: 46px;
+	margin-bottom: 30px;
+	border-bottom: 10px solid #E0E0E0;
+	border-right: 10px solid #E0E0E0;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.auth__text {
+	color: #777;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.auth__bold {
+	color: inherit;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.auth__code {
+	height: 80px !important;
+	border: 0 !important;
+	font-weight: bold;
+	font-size: 32px !important;
+	letter-spacing: 6.4px;
+	text-align: center;
+	-webkit-box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+	        box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
+	font-family: "Roboto", "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.auth__code::-webkit-input-placeholder {
+	font-family: "Roboto", "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+	font-weight: 700;
+	font-size: 32px;
+}
+.auth__code::-moz-placeholder {
+	font-family: "Roboto", "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+	font-weight: 700;
+	font-size: 32px;
+}
+.auth__code::-moz-placeholder {
+	font-family: "Roboto", "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+	font-weight: 700;
+	font-size: 32px;
+}
+
+/* message */
+.message__ico {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.message__title {
+	font-size: 18px;
+	line-height: 26px;
+	text-align: center;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.message__text {
+	margin-top: 10px;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.message__bottom {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px dotted #000;
+}
+
+/* notice */
+.notice .account__list {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top-color: #E0E0E0;
+}
+.notice .account__set:before, .notice .account__set:after {
+	display: none;
+}
+.notice .account__set .account__row {
+	padding: 0;
+}
+.notice .account__set .account__row:not(:first-child) {
+	border-top: 0;
+}
+.notice .account__set .account__row:not(:first-child) {
+	margin-top: 10px;
+}
+.notice .account__set .account__row .account__price {
+	font-family: inherit !important;
+	font-size: inherit;
+	line-height: inherit;
+}
+.notice .bullet {
+	margin-top: 15px;
+}
+
+.notice__service {
+	color: #2cbbb6;
+	font-size: 16px;
+	line-height: 24px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.notice__text {
+	margin-top: 35px;
+	font-size: 24px;
+	line-height: 34px;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.notice__mark {
+	display: inline-block;
+	position: relative;
+}
+.notice__mark:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 15px;
+	background-color: #2BB7B4;
+	opacity: 0.3;
+}
+
+/* account */
+.account__header {
+	text-align: center;
+}
+.account__header .account__text {
+	font-size: 16px;
+	line-height: 24px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.account__header .account__price {
+	margin-top: 5px;
+	font-size: 44px;
+	line-height: 55px;
+}
+.account__header .account__unit {
+	font-size: 24px;
+	line-height: 35px;
+}
+
+.account__bank .account__agency {
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	font-size: 18px;
+	line-height: 26px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.account__bank .account__account {
+	margin-top: 16px;
+	letter-spacing: 0;
+}
+
+.account__charge .account__account {
+	margin-top: 5px;
+}
+
+.account__charge--end .account__text {
+	color: #777;
+}
+.account__charge--end .account__account {
+	color: #CBCBCB;
+}
+
+.account__agency {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.account__agency .ico__20x20 {
+	margin-right: 6px;
+}
+
+.account__account {
+	font-size: 24px;
+	line-height: 34px;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.account__price {
+	font-family: "Roboto", "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.account__unit {
+	margin-left: 2px;
+	vertical-align: baseline;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.account__category:not(:first-child) {
+	margin-top: 20px;
+}
+.account__category + .account__list {
+	margin-top: 5px;
+}
+.account__category .account__text {
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.account__list {
+	margin-top: 30px;
+	border-top: 1px solid #000;
+	font-size: 16px;
+	line-height: 24px;
+}
+.account__list:last-child .account__set .account__row:last-child {
+	padding-bottom: 0;
+}
+.account__list:not(:last-child) {
+	border-bottom: 1px dotted #000;
+}
+
+.account__set .account__row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 14px 0;
+}
+.account__set .account__row:not(:first-child) {
+	border-top: 1px dotted #000;
+}
+.account__set .account__row .account__right {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-left: 20px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.account__set .account__price {
+	font-size: 24px;
+	line-height: 32px;
+}
+.account__set .account__price + .account__price {
+	margin-left: 5px;
+}
+.account__set .account__unit {
+	font-size: 16px;
+	line-height: 24px;
+	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.account__set .account__payment .account__text {
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.account__set .account__payment .account__detail {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.account__set .account__payment .account__detail span:nth-child(2) {
+	position: relative;
+	margin-left: 6px;
+	padding-left: 7px;
+	color: #777;
+}
+.account__set .account__payment .account__detail span:nth-child(2):before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 1px;
+	height: 12px;
+	margin-top: -6px;
+	background-color: #777;
+}
+
+.account__msgs {
+	padding-top: 20px;
+}
+.account__msgs .account__msg {
+	display: block;
+	font-size: 18px;
+	line-height: 26px;
+	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+/* coupon */
+.coupon__item {
+	position: relative;
+	border: 1px solid #E0E0E0;
+	border-radius: 8px;
+}
+.coupon__item:not(:first-child) {
+	margin-top: 15px;
+}
+.coupon__item:before, .coupon__item:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 20px;
+	height: 20px;
+	margin-top: -11px;
+	border: 1px solid #E0E0E0;
+	border-radius: 100%;
+	background-color: #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.coupon__item:before {
+	left: -11px;
+	border-left-color: transparent;
+	border-top-color: transparent;
+}
+.coupon__item:after {
+	right: -11px;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.coupon__inner {
+	padding: 20px 25px;
+}
+
+.coupon__name {
+	font-size: 18px;
+	line-height: 26px;
+	font-family: "NS BD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+
+.coupon__number {
+	margin-top: 3px;
+	color: #2cbbb6;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.coupon__info {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-top: 30px;
+}
+.coupon__info .coupon__text {
+	color: #777;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.coupon__date {
+	font-size: 16px;
+	line-height: 25px;
+}

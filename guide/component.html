@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="theme-color" content="transparent">
+	<title>KT ARS</title>
+	<link rel="stylesheet" href="../assets/css/ui.css">
+	<script defer src="../assets/js/ui.js"></script>
+</head>
+<style>
+	hr {
+		height: 4px;
+		margin: 50px -20px;
+		border: 0;
+		background-color: #000;
+	}
+	.contents > div {
+		background-color: #fff;
+	}
+	.contents > div:first-child {
+		padding-top: 30px;
+	}
+	.header__msgs {
+		color: #fff;
+	}
+	.header__msgs code {
+		padding: 0;
+	}
+	.header__msgs * {
+		color: inherit;
+		font-size: 20px;
+	}
+	.header__msgs > div:not(:first-child) {
+		margin-top: 15px;
+	}
+	.category {
+		padding: 0 20px 30px;
+		color: rgb(44, 187, 182);
+		font-size: 18px;
+	}
+	pre:last-child code {
+		margin-bottom: 0;
+	}
+	code {
+		display: block;
+		overflow: auto;
+		max-height: 400px;
+		margin: 20px 0 40px;
+		padding: 20px 25px 35px;
+		background-color: rgb(42, 46, 46);
+		color: #fff;
+		line-height: 22px;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<div class="header__inner">
+				<div class="header__util">
+					<a href="#" class="header__back"><span class="a11y">뒤로가기</span></a>
+					<h1 class="header__title">가이드</h1>
+					<span class="header__time">00:13</span>
+				</div>
+				<div class="header__msgs">
+					<p>HTML 기본 구조</p>
+<pre>
+<code>&lt;div class="wrap"&gt;
+	&lt;header class="header"&gt;&lt;/header&gt;
+	&lt;div class="contents"&gt;
+		&lt;div class="contents__inner"&gt;컨텐츠&lt;/div&gt;
+		&lt;div class="auth"&gt;
+			&lt;input type="radio" name="card" id="card01" class="auth__form" checked&gt;
+			&lt;label for="card01" class="auth__card"&gt;
+				&lt;i class="auth__check"&gt;&lt;/i&gt;
+				&lt;span class="auth__text"&gt;
+					&lt;span class="auth__bold"&gt;생년월일 6자리를&lt;/span&gt;&lt;br&gt;
+					입력할래요
+				&lt;/span&gt;
+			&lt;/label&gt;
+			&lt;input type="radio" name="card" id="card02" class="auth__form"&gt;
+			&lt;label for="card02" class="auth__card"&gt;
+				&lt;i class="auth__check"&gt;&lt;/i&gt;
+				&lt;span class="auth__text"&gt;
+					&lt;span class="auth__bold"&gt;사업자등록번호 뒤 5자리를&lt;/span&gt;&lt;br&gt;
+					입력할래요
+				&lt;/span&gt;
+			&lt;/label&gt;
+			&lt;label for="birth" class="a11y"&gt;생년월일 6자리&lt;/label&gt;
+			&lt;input type="tel" id="birth" class="auth__code" maxlength="6" placeholder="860117"&gt;
+			&lt;div class="button-rectangle__container"&gt;
+				&lt;a href="#" class="button-rectangle button-rectangle__fill"&gt;확인&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="contents__etc"&gt;banner, bullet, button, etc&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="quick-nav"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+					<div><a href="#1">1. default contents</a></div>
+					<div><a href="#2">2. service</a></div>
+					<div><a href="#3">3. coupon</a></div>
+					<div><a href="#4">4. message</a></div>
+					<div><a href="#5">5. auth</a></div>
+					<div><a href="#6">6. banner</a></div>
+					<div><a href="#7">7. account</a></div>
+					<div><a href="#8">8. accordion</a></div>
+					<div><a href="#9">9. button</a></div>
+					<div><a href="#10">10. bullet</a></div>
+					<div><a href="#11">11. table</a></div>
+					<div><a href="#12">12. form</a></div>
+					<div><a href="#13">13. modal</a></div>
+					<div><a href="#14">14. ico</a></div>
+					<div><a href="#15">15. font</a></div>
+					<div><a href="#16">16. spinner</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="contents">
+			<!-- default contents -->
+			<div id="1">
+				<p class="category">default contents (layout.scss)</p>
+				<div class="contents__inner">
+					기본 흰색 박스
+				</div>
+<pre>
+<code>
+&lt;div class="contents__inner"&gt;
+	내용
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner contents__inner--wave">
+					기본 흰색 + 웨이브
+				</div>
+<pre>
+<code>
+&lt;div class="contents__inner contents__inner--wave"&gt;
+	내용
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // default contents -->
+			<hr>
+			<!-- service -->
+			<div id="2">
+				<p class="category">service (service.scss)</p>
+				<div class="contents__inner">
+					<div class="service">
+						<ul class="service__list">
+							<li class="service__item">
+								<a href="#" class="service__link">
+									<span class="service__title">청구요금 확인</span>
+									<i class="service__arrow service__arrow--right"></i>
+								</a>
+							</li>
+							<li class="service__item">
+								<a href="#" class="service__link">
+									<span class="service__title">
+										<i class="ico__30x30 ico__30x30--internet"></i>
+										청구요금 확인
+									</span>
+									<i class="service__arrow service__arrow--right"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="service"&gt;
+	&lt;ul class="service__list"&gt;
+		&lt;li class="service__item"&gt;
+			&lt;a href="#" class="service__link"&gt;
+				&lt;span class="service__title"&gt;청구요금 확인&lt;/span&gt;
+				&lt;i class="service__arrow service__arrow--right"&gt;&lt;/i&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="service__item"&gt;
+			&lt;a href="#" class="service__link"&gt;
+				&lt;span class="service__title"&gt;
+					&lt;i class="ico__30x30 ico__30x30--internet"&gt;&lt;/i&gt;
+					청구요금 확인
+				&lt;/span&gt;
+				&lt;i class="service__arrow service__arrow--right"&gt;&lt;/i&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // service -->
+			<hr>
+			<!-- coupon -->
+			<div id="3">
+				<p class="category">coupon (coupon.scss)</p>
+				<div class="contents__inner">
+					<div class="coupon">
+						<ul class="coupon__list">
+							<li class="coupon__item">
+								 <div class="coupon__inner">
+									 <p class="coupon__name">장기혜택 패키지 쿠폰 2년</p>
+									 <div class="coupon__info">
+										 <div class="coupon__left">
+											 <p class="coupon__text">등록 유효기간</p>
+											 <p class="coupon__date">22.03.22 ~ 22.04.01</p>
+										 </div>
+										 <div class="coupon__right">
+											 <button type="button" class="button-radius">쿠폰선택</button>
+										 </div>
+									 </div>
+								 </div>
+							</li>
+							<li class="coupon__item">
+								<div class="coupon__inner">
+									<p class="coupon__name">장기혜택 패키지 쿠폰 2년</p>
+									<p class="coupon__number">PCKG020192u31</p>
+									<div class="coupon__info">
+										<div class="coupon__left">
+											<p class="coupon__text">등록 유효기간</p>
+											<p class="coupon__date">22.03.22 ~ 22.04.01</p>
+										</div>
+										<div class="coupon__right">
+											<button type="button" class="button-radius">쿠폰선택</button>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="coupon"&gt;
+	&lt;ul class="coupon__list"&gt;
+		&lt;li class="coupon__item"&gt;
+			&lt;div class="coupon__inner"&gt;
+				&lt;p class="coupon__name"&gt;장기혜택 패키지 쿠폰 2년&lt;/p&gt;
+				&lt;div class="coupon__info"&gt;
+					&lt;div class="coupon__left"&gt;
+						&lt;p class="coupon__text"&gt;등록 유효기간&lt;/p&gt;
+						&lt;p class="coupon__date"&gt;22.03.22 ~ 22.04.01&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class="coupon__right"&gt;
+						&lt;button type="button" class="button-radius"&gt;쿠폰선택&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li class="coupon__item"&gt;
+			&lt;div class="coupon__inner"&gt;
+				&lt;p class="coupon__name"&gt;장기혜택 패키지 쿠폰 2년&lt;/p&gt;
+				&lt;p class="coupon__number"&gt;PCKG020192u31&lt;/p&gt;
+				&lt;div class="coupon__info"&gt;
+					&lt;div class="coupon__left"&gt;
+						&lt;p class="coupon__text"&gt;등록 유효기간&lt;/p&gt;
+						&lt;p class="coupon__date"&gt;22.03.22 ~ 22.04.01&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class="coupon__right"&gt;
+						&lt;button type="button" class="button-radius"&gt;쿠폰선택&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // coupon -->
+			<hr>
+			<!-- message -->
+			<div id="4">
+				<p class="category">message (message.scss)</p>
+				<div class="contents__inner">
+					<div class="message">
+						<div class="message__ico">
+							<i class="ico__30x30 ico__30x30--noti"></i>
+						</div>
+						<p class="message__title">
+							고객님들께서 자주 하는 질문!<br>
+							보다 쉽게 알아보세요!
+						</p>
+						<p class="message__text">해외여행을 준비 중인 고객님, 꽃중년 실버 고객님, 자녀가 있으신 고객님을 위한 FAQ까지! 지금 바로 &lsquo;자주하는 질문&rsquo;으로 확인해보세요!</p>
+						<div class="button-rectangle__container">
+							<a href="#" class="button-rectangle button-rectangle__fill">자주하는 질문 바로가기</a>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="message"&gt;
+	&lt;div class="message__ico"&gt;
+		&lt;i class="ico__30x30 ico__30x30--noti"&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;p class="message__title"&gt;
+		고객님들께서 자주 하는 질문!&lt;br&gt;
+		보다 쉽게 알아보세요!
+	&lt;/p&gt;
+	&lt;p class="message__text"&gt;해외여행을 준비 중인 고객님, 꽃중년 실버 고객님, 자녀가 있으신 고객님을 위한 FAQ까지! 지금 바로 &lsquo;자주하는 질문&rsquo;으로 확인해보세요!&lt;/p&gt;
+	&lt;div class="button-rectangle__container"&gt;
+		&lt;a href="#" class="button-rectangle button-rectangle__fill"&gt;자주하는 질문 바로가기&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner">
+					<div class="message">
+						<div class="message__ico">
+							<i class="ico__30x30 ico__30x30--time"></i>
+						</div>
+						<p class="message__title">잠시만 기다려 주세요.</p>
+						<p class="message__text">kt 수화상담 연결 번호를 문자 메시지로 보내드렸습니다. 전화번호를 누르시고 영상통화 버튼을 누르시면수화전문 상담사와 바로 연결 됩니다.</p>
+						<div class="message__bottom">
+							내용
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="message"&gt;
+	&lt;div class="message__ico"&gt;
+		&lt;i class="ico__30x30 ico__30x30--time"&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;p class="message__title"&gt;잠시만 기다려 주세요.&lt;/p&gt;
+	&lt;p class="message__text"&gt;kt 수화상담 연결 번호를 문자 메시지로 보내드렸습니다. 전화번호를 누르시고 영상통화 버튼을 누르시면수화전문 상담사와 바로 연결 됩니다.&lt;/p&gt;
+	&lt;div class="message__bottom"&gt;
+		내용
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // message -->
+			<hr>
+			<!-- auth -->
+			<div id="5">
+				<p class="category">auth (auth.scss)</p>
+				<div class="auth">
+					<input type="radio" name="card" id="card01" class="auth__form" checked>
+					<label for="card01" class="auth__card">
+						<i class="auth__check"></i>
+						<span class="auth__text">
+							<span class="auth__bold">생년월일 6자리를</span><br>
+							입력할래요
+						</span>
+					</label>
+					<input type="radio" name="card" id="card02" class="auth__form">
+					<label for="card02" class="auth__card">
+						<i class="auth__check"></i>
+						<span class="auth__text">
+							<span class="auth__bold">사업자등록번호 뒤 5자리를</span><br>
+							입력할래요
+						</span>
+					</label>
+					<label for="birth" class="a11y">생년월일 6자리</label>
+					<input type="tel" id="birth" class="auth__code" maxlength="6" placeholder="860117">
+					<div class="button-rectangle__container">
+						<a href="#" class="button-rectangle button-rectangle__fill">확인</a>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="auth"&gt;
+	&lt;input type="radio" name="card" id="card01" class="auth__form" checked&gt;
+	&lt;label for="card01" class="auth__card"&gt;
+		&lt;i class="auth__check"&gt;&lt;/i&gt;
+		&lt;span class="auth__text"&gt;
+			&lt;span class="auth__bold"&gt;생년월일 6자리를&lt;/span&gt;&lt;br&gt;
+			입력할래요
+		&lt;/span&gt;
+	&lt;/label&gt;
+	&lt;input type="radio" name="card" id="card02" class="auth__form"&gt;
+	&lt;label for="card02" class="auth__card"&gt;
+		&lt;i class="auth__check"&gt;&lt;/i&gt;
+		&lt;span class="auth__text"&gt;
+			&lt;span class="auth__bold"&gt;사업자등록번호 뒤 5자리를&lt;/span&gt;&lt;br&gt;
+			입력할래요
+		&lt;/span&gt;
+	&lt;/label&gt;
+	&lt;label for="birth" class="a11y"&gt;생년월일 6자리&lt;/label&gt;
+	&lt;input type="tel" id="birth" class="auth__code" maxlength="6" placeholder="860117"&gt;
+	&lt;div class="button-rectangle__container"&gt;
+		&lt;a href="#" class="button-rectangle button-rectangle__fill"&gt;확인&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // auth -->
+			<hr>
+			<!-- banner -->
+			<div id="6">
+				<p class="category">banner (banner.scss)</p>
+				<div class="banner">
+					<div class="banner__inner" style="background-color: #C3CEFA;">
+						<p class="banner__title">KT 5G 20대 전용 혜택</p>
+						<p class="banner__text">태블릿, 워치 유저라면 Y덤!</p>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="banner"&gt;
+	&lt;div class="banner__inner" style="background-color: #C3CEFA;"&gt;
+		&lt;p class="banner__title"&gt;KT 5G 20대 전용 혜택&lt;/p&gt;
+		&lt;p class="banner__text"&gt;태블릿, 워치 유저라면 Y덤!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // banner -->
+			<hr>
+			<!-- account -->
+			<div id="7">
+				<p class="category">account (account.scss)</p>
+				<div class="contents__inner contents__inner--wave">
+					<div class="account">
+						<div class="account__header">
+							<p class="account__text">1월 청구요금 내역입니다.</p>
+							<p class="account__price">
+								2,160,630<span class="account__unit">원</span>
+							</p>
+						</div>
+						<div class="account__list">
+							<ul class="account__set">
+								<li class="account__row">
+									<div class="account__left">납부하실 요금</div>
+									<div class="account__right">
+										<span class="account__price">0<span class="account__unit">원</span></span>
+									</div>
+								</li>
+								<li class="account__row">
+									<div class="account__left">납부하실 요금</div>
+									<div class="account__right">
+										<span class="account__price">0<span class="account__unit">원</span></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="account__msgs">
+							<p class="account__msg">납부하실 금액이 없습니다.</p>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="account"&gt;
+	&lt;div class="account__header"&gt;
+		&lt;p class="account__text"&gt;1월 청구요금 내역입니다.&lt;/p&gt;
+		&lt;p class="account__price"&gt;
+			2,160,630&lt;span class="account__unit"&gt;원&lt;/span&gt;
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="account__list"&gt;
+		&lt;ul class="account__set"&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;납부하실 요금&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;0&lt;span class="account__unit"&gt;원&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;납부하실 요금&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;0&lt;span class="account__unit"&gt;원&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="account__msgs"&gt;
+		&lt;p class="account__msg"&gt;납부하실 금액이 없습니다.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner contents__inner--wave">
+					<div class="account">
+						<div class="account__header account__bank">
+							<p class="account__agency">
+								<i class="ico__20x20 ico__20x20--woori"></i>
+								우리은행
+							</p>
+							<p class="account__account">1234-12-12345689</p>
+						</div>
+						<div class="account__list">
+							<ul class="account__set">
+								<li class="account__row">
+									<div class="account__left">납부하실 요금</div>
+									<div class="account__right">
+										<span class="account__price">0<span class="account__unit">원</span></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="account"&gt;
+	&lt;div class="account__header account__bank"&gt;
+		&lt;p class="account__agency"&gt;
+			&lt;i class="ico__20x20 ico__20x20--woori"&gt;&lt;/i&gt;
+			우리은행
+		&lt;/p&gt;
+		&lt;p class="account__account"&gt;1234-12-12345689&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="account__list"&gt;
+		&lt;ul class="account__set"&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;납부하실 요금&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;0&lt;span class="account__unit"&gt;원&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner contents__inner--wave">
+					<div class="account">
+						<div class="account__header account__charge">
+							<p class="account__text">010-12**-*234</p>
+							<p class="account__account">모두 다 KT 35(LTE)</p>
+						</div>
+						<div class="account__list">
+							<ul class="account__set">
+								<li class="account__row">
+									<div class="account__left">음성</div>
+									<div class="account__right">750KB</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="account"&gt;
+	&lt;div class="account__header account__charge"&gt;
+		&lt;p class="account__text"&gt;010-12**-*234&lt;/p&gt;
+		&lt;p class="account__account"&gt;모두 다 KT 35(LTE)&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="account__list"&gt;
+		&lt;ul class="account__set"&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;음성&lt;/div&gt;
+				&lt;div class="account__right"&gt;750KB&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner">
+					<div class="account">
+						<div class="account__header account__charge account__charge--end">
+							<p class="account__text">010-12**-*234</p>
+							<p class="account__account">모두 다 KT 35(LTE)</p>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="account"&gt;
+	&lt;div class="account__header account__charge account__charge--end"&gt;
+		&lt;p class="account__text"&gt;010-12**-*234&lt;/p&gt;
+		&lt;p class="account__account"&gt;모두 다 KT 35(LTE)&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner">
+					<div class="account">
+						<div class="account__category">
+							<p class="account__text">평일</p>
+						</div>
+						<div class="account__list">
+							<ul class="account__set account__set--flat">
+								<li class="account__row">
+									<div class="account__left">지난달 이월 무료통화</div>
+									<div class="account__right">
+										<span class="account__price">5<span class="account__unit">분</span></span>
+										<span class="account__price">30<span class="account__unit">초</span></span>
+									</div>
+								</li>
+								<li class="account__row">
+									<div class="account__left">지난달 이월 무료통화</div>
+									<div class="account__right">
+										<span class="account__price">5<span class="account__unit">분</span></span>
+										<span class="account__price">30<span class="account__unit">초</span></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="account__category">
+							<p class="account__text">휴일</p>
+						</div>
+						<div class="account__list">
+							<ul class="account__set account__set--flat">
+								<li class="account__row">
+									<div class="account__left">지난달 이월 무료통화</div>
+									<div class="account__right">
+										<span class="account__price">5<span class="account__unit">분</span></span>
+										<span class="account__price">30<span class="account__unit">초</span></span>
+									</div>
+								</li>
+								<li class="account__row">
+									<div class="account__left">지난달 이월 무료통화</div>
+									<div class="account__right">
+										<span class="account__price">5<span class="account__unit">분</span></span>
+										<span class="account__price">30<span class="account__unit">초</span></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="button-rectangle__container">
+							<a href="#" class="button-rectangle button-rectangle__fill">버튼</a>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="account"&gt;
+	&lt;div class="account__category"&gt;
+		&lt;p class="account__text"&gt;평일&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="account__list"&gt;
+		&lt;ul class="account__set account__set--flat"&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;지난달 이월 무료통화&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;5&lt;span class="account__unit"&gt;분&lt;/span&gt;&lt;/span&gt;
+					&lt;span class="account__price"&gt;30&lt;span class="account__unit"&gt;초&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;지난달 이월 무료통화&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;5&lt;span class="account__unit"&gt;분&lt;/span&gt;&lt;/span&gt;
+					&lt;span class="account__price"&gt;30&lt;span class="account__unit"&gt;초&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="account__category"&gt;
+		&lt;p class="account__text"&gt;휴일&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="account__list"&gt;
+		&lt;ul class="account__set account__set--flat"&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;지난달 이월 무료통화&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;5&lt;span class="account__unit"&gt;분&lt;/span&gt;&lt;/span&gt;
+					&lt;span class="account__price"&gt;30&lt;span class="account__unit"&gt;초&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			&lt;li class="account__row"&gt;
+				&lt;div class="account__left"&gt;지난달 이월 무료통화&lt;/div&gt;
+				&lt;div class="account__right"&gt;
+					&lt;span class="account__price"&gt;5&lt;span class="account__unit"&gt;분&lt;/span&gt;&lt;/span&gt;
+					&lt;span class="account__price"&gt;30&lt;span class="account__unit"&gt;초&lt;/span&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="button-rectangle__container"&gt;
+		&lt;a href="#" class="button-rectangle button-rectangle__fill"&gt;버튼&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				<div class="contents__inner">
+					<div class="account">
+						<div class="account__header">
+							<p class="account__text">1월 청구요금 내역입니다.</p>
+							<p class="account__price">
+								2,160,630<span class="account__unit">원</span>
+							</p>
+						</div>
+						<div class="button-rectangle__container">
+							<a href="#" class="button-rectangle button-rectangle__fill">소액결제 한도조회 및 변경</a>
+						</div>
+						<div class="account__list">
+							<ul class="account__set">
+								<li class="account__row">
+									<div class="account__left">
+										<div class="account__payment">
+											<span class="account__text">에스케이플레닛(주)</span>
+											<div class="account__detail">
+												<span>22.03.22</span>
+												<span>모빌리언스</span>
+											</div>
+										</div>
+									</div>
+									<div class="account__right">
+										<span class="account__price">05<span class="account__unit">건</span></span>
+									</div>
+								</li>
+								<li class="account__row">
+									<div class="account__left">
+										<div class="account__payment">
+											<span class="account__text">에스케이플레닛(주)</span>
+											<div class="account__detail">
+												<span>22.03.22</span>
+												<span>모빌리언스</span>
+											</div>
+										</div>
+									</div>
+									<div class="account__right">
+										<span class="account__price">36,800<span class="account__unit">원</span></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="account"&gt;
+	&lt;div class="account__header"&gt;
+		&lt;p class="account__text"&gt;1월 청구요금 내역입니다.&lt;/p&gt;
+		&lt;p class="account__price"&gt;
+			2,160,630&lt;span class="account__unit"&gt;원&lt;/span&gt;
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="button-rectangle__container"&gt;
+		&lt;a href="#" class="button-rectangle button-rectangle__fill"&gt;소액결제 한도조회 및 변경&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;dl class="account__list"&gt;
+		&lt;dt&gt;
+			&lt;div class="account__payment"&gt;
+				&lt;span class="account__text"&gt;에스케이플레닛(주)&lt;/span&gt;
+				&lt;div class="account__detail"&gt;
+					&lt;span&gt;22.03.22&lt;/span&gt;
+					&lt;span&gt;모빌리언스&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/dt&gt;
+		&lt;dd&gt;
+			&lt;span class="account__price"&gt;05&lt;span class="account__unit"&gt;건&lt;/span&gt;&lt;/span&gt;
+		&lt;/dd&gt;
+		&lt;dt&gt;
+			&lt;div class="account__payment"&gt;
+				&lt;span class="account__text"&gt;에스케이플레닛(주)&lt;/span&gt;
+				&lt;div class="account__detail"&gt;
+					&lt;span&gt;22.03.22&lt;/span&gt;
+					&lt;span&gt;모빌리언스&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/dt&gt;
+		&lt;dd&gt;
+			&lt;span class="account__price"&gt;36,800&lt;span class="account__unit"&gt;원&lt;/span&gt;&lt;/span&gt;
+		&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // account -->
+			<hr>
+			<!-- accordion -->
+			<div id="8">
+				<p class="category">accordion (component.scss)</p>
+				<div class="contents__inner">
+					<div class="accordion">
+						<dl class="accordion__list">
+							<dt class="accordion__header accordion__header--active">
+								<span class="accordion__title">해외 데이터로밍 차단하기</span>
+								<i class="accordion__arrow"></i>
+							</dt>
+							<dd class="accordion__panel">
+								<div class="accordion__inner">
+									<p class="accordion__text">아래 플라자/대리점 위치찾기 바로가기를 누르면 가까운 플라자, 대리점 확인이 가능합니다.</p>
+									<a href="#" class="button-underline">플라자/대리점 위치찾기 바로가기</a>
+								</div>
+							</dd>
+							<dt class="accordion__header">
+								<span class="accordion__title">해외 데이터로밍 차단하기</span>
+								<i class="accordion__arrow"></i>
+							</dt>
+							<dd class="accordion__panel">
+								<div class="accordion__inner">
+									<div class="bullet">
+										<ul class="bullet__list">
+											<li class="bullet__item bullet__item--circle bullet__item--black">
+												<span class="font--md">방법1</span>
+												<p class="bullet__separate">
+													휴대폰에서 '데이터로밍 차단' 설정 변경 [ 아이폰 ]<br>
+													설정 &gt; 셀룰러 &gt; '데이터 로밍' 비활성화 [ 안드로이드 ] <br>
+													설정 &gt; 네트워크 더보기 &gt; 모바일 네트워크 &gt; '데이터 로밍' 체크 해제
+												</p>
+											</li>
+											<li class="bullet__item bullet__item--circle bullet__item--black">
+												<span class="font--md">방법2</span>
+												<p class="bullet__separate">
+													무료로 제공하는 <span class="point--cyan">데이터 로밍 차단 서비스 가입</span><br>
+													[ 가입방법 ]<br>
+													&quot;데이터로밍차단&quot; 단어를 114로 문자전송 &gt;<br>
+													&quot;1번&quot; 전송 &gt; &quot;생년월일&quot; 전송 &gt; 차단 완료
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</dd>
+							<dt class="accordion__header">
+								<span class="accordion__title">해외 데이터로밍 차단하기</span>
+								<div class="accordion__separate">
+									<span class="accordion__text accordion__text--lightgray">등록 유효기간</span>
+									<span class="accordion__text">22.03.22 ~ 22.04.01</span>
+								</div>
+								<i class="accordion__arrow"></i>
+							</dt>
+							<dd class="accordion__panel">
+								<div class="accordion__inner">
+									내용
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="accordion"&gt;
+	&lt;dl class="accordion__list"&gt;
+		&lt;dt class="accordion__header accordion__header--active"&gt;
+			&lt;span class="accordion__title"&gt;해외 데이터로밍 차단하기&lt;/span&gt;
+			&lt;i class="accordion__arrow"&gt;&lt;/i&gt;
+		&lt;/dt&gt;
+		&lt;dd class="accordion__panel"&gt;
+			&lt;div class="accordion__inner"&gt;
+				&lt;p class="accordion__text"&gt;아래 플라자/대리점 위치찾기 바로가기를 누르면 가까운 플라자, 대리점 확인이 가능합니다.&lt;/p&gt;
+				&lt;a href="#" class="button-underline"&gt;플라자/대리점 위치찾기 바로가기&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/dd&gt;
+		&lt;dt class="accordion__header"&gt;
+			&lt;span class="accordion__title"&gt;해외 데이터로밍 차단하기&lt;/span&gt;
+			&lt;i class="accordion__arrow"&gt;&lt;/i&gt;
+		&lt;/dt&gt;
+		&lt;dd class="accordion__panel"&gt;
+			&lt;div class="accordion__inner"&gt;
+				&lt;div class="bullet"&gt;
+					&lt;ul class="bullet__list"&gt;
+						&lt;li class="bullet__item bullet__item--circle bullet__item--black"&gt;
+							&lt;span class="font--md"&gt;방법1&lt;/span&gt;
+							&lt;p class="bullet__separate"&gt;
+								휴대폰에서 '데이터로밍 차단' 설정 변경 [ 아이폰 ]&lt;br&gt;
+								설정 &gt; 셀룰러 &gt; '데이터 로밍' 비활성화 [ 안드로이드 ] &lt;br&gt;
+								설정 &gt; 네트워크 더보기 &gt; 모바일 네트워크 &gt; '데이터 로밍' 체크 해제
+							&lt;/p&gt;
+						&lt;/li&gt;
+						&lt;li class="bullet__item bullet__item--circle bullet__item--black"&gt;
+							&lt;span class="font--md"&gt;방법2&lt;/span&gt;
+							&lt;p class="bullet__separate"&gt;
+								무료로 제공하는 &lt;span class="point--cyan"&gt;데이터 로밍 차단 서비스 가입&lt;/span&gt;&lt;br&gt;
+								[ 가입방법 ]&lt;br&gt;
+								&quot;데이터로밍차단&quot; 단어를 114로 문자전송 &gt;&lt;br&gt;
+								&quot;1번&quot; 전송 &gt; &quot;생년월일&quot; 전송 &gt; 차단 완료
+							&lt;/p&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/dd&gt;
+		&lt;dt class="accordion__header"&gt;
+			&lt;span class="accordion__title"&gt;해외 데이터로밍 차단하기&lt;/span&gt;
+			&lt;div class="accordion__separate"&gt;
+				&lt;span class="accordion__text accordion__text--lightgray"&gt;등록 유효기간&lt;/span&gt;
+				&lt;span class="accordion__text"&gt;22.03.22 ~ 22.04.01&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;i class="accordion__arrow"&gt;&lt;/i&gt;
+		&lt;/dt&gt;
+		&lt;dd class="accordion__panel"&gt;
+			&lt;div class="accordion__inner"&gt;
+				내용
+			&lt;/div&gt;
+		&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // accordion -->
+			<hr>
+			<!-- button -->
+			<div id="9">
+				<p class="category">button (component.scss)</p>
+				<div class="contents__inner">
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__fill">확인</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__fill button-rectangle__fill--active">touch</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled">disabled</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__fill button-rectangle__fill--gray">취소</button>
+						<button type="button" class="button-rectangle button-rectangle__fill">확인</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__line button-rectangle--full">실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
+					</div>
+					<a href="#" class="button-radius">유선상품 ARS 보기</a>
+					<a href="#" class="button-underline">플라자/대리점 위치찾기 바로가기</a>
+				</div>
+<pre>
+<code>
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__fill"&gt;확인&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__fill button-rectangle__fill--active"&gt;touch&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled"&gt;disabled&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__fill button-rectangle__fill--gray"&gt;취소&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__fill"&gt;확인&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line button-rectangle--full"&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
+&lt;/div&gt;
+&lt;a href="#" class="button-radius"&gt;유선상품 ARS 보기&lt;/a&gt;
+&lt;a href="#" class="button-underline"&gt;플라자/대리점 위치찾기 바로가기&lt;/a&gt;
+</code></pre>
+			</div>
+			<!-- // button  -->
+			<hr>
+			<!-- bullet -->
+			<div id="10">
+				<p class="category">bullet (component.scss)</p>
+				<div class="contents__inner">
+					<div class="bullet">
+						<ul class="bullet__list">
+							<li class="bullet__item bullet__item--circle">각종 요금 관련 확인서는 kt닷컴 내 마이kt나 스마트폰 고객센터 어플을 통해 직접 프린트 또는 팩스 전송 하실수 있습니다.</li>
+							<li class="bullet__item bullet__item--dash">
+								각종 요금 관련 확인서는 kt닷컴 내 마이kt나 스마트폰 고객센터 어플을 통해 직접 프린트 또는 팩스 전송 하실수 있습니다.
+								<ul class="bullet__list">
+									<li class="bullet__item bullet__item--dash">asdfasef</li>
+									<li class="bullet__item bullet__item--dash">asdfasef</li>
+								</ul>
+							</li>
+							<li class="bullet__item bullet__item--info">
+								각종 요금 관련 확인서는 kt닷컴 내 마이kt나 스마트폰 고객센터 어플을 통해 직접 프린트 또는 팩스 전송 하실수 있습니다.
+								<a href="#" class="button-underline">챗봇 간편납부 바로가기</a>
+							</li>
+							<li class="bullet__item bullet__item--number">
+								<div class="bullet__group">
+									<span class="bullet__number">1.</span>
+									<span class="bullet__right">
+										스마트폰 환경설정 메뉴에서 Wi-Fi[켜짐]
+										버튼을 클릭
+									</span>
+								</div>
+							</li>
+							<li class="bullet__item bullet__item--qna">
+								<div class="bullet__group">
+									<span class="bullet__key">Q1.</span>
+									tv가 두대 인데 인터넷 한 회선으로
+ 									tv 2대 사용 가능한가요?
+								</div>
+								<div class="bullet__group">
+									<span class="bullet__key">A1.</span>
+									olleh 인터넷 1회선에 최대 5대(기본단말 1대+복수단말 4대)까지 olleh tv를 이용할 수 있는 복수단말 서비스를 신청하시면 됩니다. 기본 olleh tv 회선대비 대비 저렴
+								</div>
+							</li>
+							<li class="bullet__item bullet__item--qna">
+								<div class="bullet__group">
+									<span class="bullet__key">Q2.</span>
+									tv가 두대 인데 인터넷 한 회선으로
+ 									tv 2대 사용 가능한가요?
+								</div>
+								<div class="bullet__group">
+									<span class="bullet__key">A2.</span>
+									olleh 인터넷 1회선에 최대 5대(기본단말 1대+복수단말 4대)까지 olleh tv를 이용할 수 있는 복수단말 서비스를 신청하시면 됩니다. 기본 olleh tv 회선대비 대비 저렴
+								</div>
+							</li>
+						</ul>
+						<p class="bullet__item bullet__item--dash">리스트가 아닌 단독</p>
+						<p class="bullet__item bullet__item--circle bullet__item--black"><span class="font--md">리스트가 아닌 단독</span></p>
+						<p class="bullet__item bullet__item--info">리스트가 아닌 단독</p>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="bullet"&gt;
+	&lt;ul class="bullet__list"&gt;
+		&lt;li class="bullet__item bullet__item--circle"&gt;각종 요금 관련 확인서는 kt닷컴 내 마이kt나 스마트폰 고객센터 어플을 통해 직접 프린트 또는 팩스 전송 하실수 있습니다.&lt;/li&gt;
+		&lt;li class="bullet__item bullet__item--dash"&gt;
+			각종 요금 관련 확인서는 kt닷컴 내 마이kt나 스마트폰 고객센터 어플을 통해 직접 프린트 또는 팩스 전송 하실수 있습니다.
+			&lt;ul class="bullet__list"&gt;
+				&lt;li class="bullet__item bullet__item--dash"&gt;asdfasef&lt;/li&gt;
+				&lt;li class="bullet__item bullet__item--dash"&gt;asdfasef&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li class="bullet__item bullet__item--info"&gt;
+			각종 요금 관련 확인서는 kt닷컴 내 마이kt나 스마트폰 고객센터 어플을 통해 직접 프린트 또는 팩스 전송 하실수 있습니다.
+			&lt;a href="#" class="button-underline"&gt;챗봇 간편납부 바로가기&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="bullet__item bullet__item--number"&gt;
+			&lt;div class="bullet__group"&gt;
+				&lt;span class="bullet__number"&gt;1.&lt;/span&gt;
+				&lt;span class="bullet__right"&gt;스마트폰 환경설정 메뉴에서 Wi-Fi[켜짐]
+				버튼을 클릭&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li class="bullet__item bullet__item--qna"&gt;
+			&lt;div class="bullet__group"&gt;
+				&lt;span class="bullet__key"&gt;Q2.&lt;/span&gt;
+				tv가 두대 인데 인터넷 한 회선으로
+				 tv 2대 사용 가능한가요?
+			&lt;/div&gt;
+			&lt;div class="bullet__group"&gt;
+				&lt;span class="bullet__key"&gt;A2.&lt;/span&gt;
+				olleh 인터넷 1회선에 최대 5대(기본단말 1대+복수단말 4대)까지 olleh tv를 이용할 수 있는 복수단말 서비스를 신청하시면 됩니다. 기본 olleh tv 회선대비 대비 저렴
+			&lt;/div&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;p class="bullet__item bullet__item--dash"&gt;리스트가 아닌 단독&lt;/p&gt;
+	&lt;p class="bullet__item bullet__item--circle bullet__item--black"&gt;&lt;span class="font--md"&gt;리스트가 아닌 단독&lt;/span&gt;&lt;/p&gt;
+	&lt;p class="bullet__item bullet__item--info"&gt;리스트가 아닌 단독&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // bullet -->
+			<hr>
+			<!-- table -->
+			<div id="11">
+				<p class="category">table (component.scss)</p>
+				<div class="contents__inner">
+					<div class="table">
+						<div class="table__header">
+							<p class="table__title">최근 3개월 사용량</p>
+						</div>
+						<table class="table__list">
+							<colgroup>
+								<col style="width: 25%;">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">thead 있는 경우</th>
+									<th scope="col">안내</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">지상파 무제한 즐기기</th>
+									<td>PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청</td>
+								</tr>
+								<tr>
+									<th scope="row">지상파 무제한 즐기기</th>
+									<td>PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="table__header">
+							<p class="table__title">최근 3개월 사용량</p>
+						</div>
+						<table class="table__list">
+							<colgroup>
+								<col style="width: 25%;">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">thead 없는 경우</th>
+									<td>PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청</td>
+								</tr>
+								<tr>
+									<th scope="row">지상파 무제한 즐기기</th>
+									<td>PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="table"&gt;
+	&lt;div class="table__header"&gt;
+		&lt;p class="table__title"&gt;최근 3개월 사용량&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;table class="table__list"&gt;
+		&lt;colgroup&gt;
+			&lt;col style="width: 25%;"&gt;
+			&lt;col&gt;
+		&lt;/colgroup&gt;
+		&lt;thead&gt;
+			&lt;tr&gt;
+				&lt;th scope="col"&gt;thead 있는 경우&lt;/th&gt;
+				&lt;th scope="col"&gt;안내&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th scope="row"&gt;지상파 무제한 즐기기&lt;/th&gt;
+				&lt;td&gt;PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope="row"&gt;지상파 무제한 즐기기&lt;/th&gt;
+				&lt;td&gt;PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+	&lt;div class="table__header"&gt;
+		&lt;p class="table__title"&gt;최근 3개월 사용량&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;table class="table__list"&gt;
+		&lt;colgroup&gt;
+			&lt;col style="width: 25%;"&gt;
+			&lt;col&gt;
+		&lt;/colgroup&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th scope="row"&gt;thead 없는 경우&lt;/th&gt;
+				&lt;td&gt;PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope="row"&gt;지상파 무제한 즐기기&lt;/th&gt;
+				&lt;td&gt;PLAYY 영화에서 제공하는 영화 VOD를 무제한으로 시청&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // table -->
+			<hr>
+			<!-- form -->
+			<div id="12">
+				<p class="category">form (component.scss)</p>
+				<div class="contents__inner">
+					<div class="form-field">
+						<div class="form-field__header">
+							<p class="form-field__title">통신요금내역서 발급 기간</p>
+							<p class="form-field__desc">통신요금내역서 발급 기간을 청구월 기준으로 입력해 주세요.</p>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">시작년월</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select" class="a11y"></label>
+										<select id="select" class="form-field__select">
+											<option>2016</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select02" class="a11y">월</label>
+										<select id="select02" class="form-field__select">
+											<option>04</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">전화번호</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select" class="a11y">lable</label>
+										<select id="select" class="form-field__select">
+											<option>2016</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-field__item form-field__item--unit">-</div>
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select02" class="a11y">lable</label>
+										<input type="text" class="form-field__input">
+									</div>
+								</div>
+								<div class="form-field__item form-field__item--unit">-</div>
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select02" class="a11y">lable</label>
+										<input type="text" class="form-field__input">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">레이블, 타이틀</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="" class="a11y"></label>
+										<input type="text" class="form-field__input">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">레이블, 타이틀</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="" class="a11y"></label>
+										<input type="text" class="form-field__input">
+									</div>
+								</div>
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="" class="a11y"></label>
+										<input type="text" class="form-field__input">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">typed</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select" class="a11y">lable</label>
+										<input type="text" id="select" class="form-field__input">
+										<button type="button" class="form-field__clear"><span class="a11y">삭제</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">error</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select" class="a11y">lable</label>
+										<input type="text" id="select" class="form-field__input" aria-invalid="true">
+										<i class="form-field__error"></i>
+									</div>
+									<p class="form-field__msg form-field__msg--error">error message</p>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<span class="form-field__label">disabled, readonly</span>
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<label for="select" class="a11y">lable</label>
+										<input type="text" id="select" class="form-field__input" value="disabled, readonly" disabled>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<input type="checkbox" id="checkbox" class="form-field__checkbox">
+										<label for="checkbox">Lorem ipsum</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-field__row">
+							<div class="form-field__inner">
+								<div class="form-field__item">
+									<div class="form-field__field">
+										<input type="checkbox" id="checkbox1" class="form-field__checkbox">
+										<label for="checkbox1">Lorem ipsum</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="button-rectangle__container">
+							<button class="button-rectangle button-rectangle__fill">버튼</button>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="form-field"&gt;
+	&lt;div class="form-field__header"&gt;
+		&lt;p class="form-field__title"&gt;통신요금내역서 발급 기간&lt;/p&gt;
+		&lt;p class="form-field__desc"&gt;통신요금내역서 발급 기간을 청구월 기준으로 입력해 주세요.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;시작년월&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select" class="a11y"&gt;&lt;/label&gt;
+					&lt;select id="select" class="form-field__select"&gt;
+						&lt;option&gt;2016&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select02" class="a11y"&gt;월&lt;/label&gt;
+					&lt;select id="select02" class="form-field__select"&gt;
+						&lt;option&gt;04&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;전화번호&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select" class="a11y"&gt;lable&lt;/label&gt;
+					&lt;select id="select" class="form-field__select"&gt;
+						&lt;option&gt;2016&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="form-field__item form-field__item--unit"&gt;-&lt;/div&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select02" class="a11y"&gt;lable&lt;/label&gt;
+					&lt;input type="text" class="form-field__input"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="form-field__item form-field__item--unit"&gt;-&lt;/div&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select02" class="a11y"&gt;lable&lt;/label&gt;
+					&lt;input type="text" class="form-field__input"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;레이블, 타이틀&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="" class="a11y"&gt;&lt;/label&gt;
+					&lt;input type="text" class="form-field__input"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;레이블, 타이틀&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="" class="a11y"&gt;&lt;/label&gt;
+					&lt;input type="text" class="form-field__input"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="" class="a11y"&gt;&lt;/label&gt;
+					&lt;input type="text" class="form-field__input"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;typed&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select" class="a11y"&gt;lable&lt;/label&gt;
+					&lt;input type="text" id="select" class="form-field__input"&gt;
+					&lt;button type="button" class="form-field__clear"&gt;&lt;span class="a11y"&gt;삭제&lt;/span&gt;&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;error&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select" class="a11y"&gt;lable&lt;/label&gt;
+					&lt;input type="text" id="select" class="form-field__input" aria-invalid="true"&gt;
+					&lt;i class="form-field__error"&gt;&lt;/i&gt;
+				&lt;/div&gt;
+				&lt;p class="form-field__msg form-field__msg--error"&gt;error message&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;span class="form-field__label"&gt;disabled, readonly&lt;/span&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;label for="select" class="a11y"&gt;lable&lt;/label&gt;
+					&lt;input type="text" id="select" class="form-field__input" value="disabled, readonly" disabled&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;input type="checkbox" id="checkbox" class="form-field__checkbox"&gt;
+					&lt;label for="checkbox"&gt;Lorem ipsum&lt;/label&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-field__row"&gt;
+		&lt;div class="form-field__inner"&gt;
+			&lt;div class="form-field__item"&gt;
+				&lt;div class="form-field__field"&gt;
+					&lt;input type="checkbox" id="checkbox1" class="form-field__checkbox"&gt;
+					&lt;label for="checkbox1"&gt;Lorem ipsum&lt;/label&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="button-rectangle__container"&gt;
+		&lt;button class="button-rectangle button-rectangle__fill"&gt;버튼&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // form -->
+			<hr>
+			<!-- modal -->
+			<div id="13">
+				<p class="category">modal (component.scss)</p>
+				<button type="button" class="button-radius">modal</button>
+				<div class="modal" style="display: none;">
+					<div class="modal__dimmed"></div>
+					<div class="modal__container">
+						<div class="modal__body">
+							<div class="modal__contents">
+								<p class="modal__title">신속한 업무처리를 위해 상담사를 연결해드리겠습니다.</p>
+								<p class="modal__desc">상담사 연결페이지로 이동합니다.</p>
+							</div>
+							<div class="button-rectangle__container">
+								<button class="button-rectangle button-rectangle__fill">확인</button>
+							</div>
+						</div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="modal"&gt;
+	&lt;div class="modal__dimmed"&gt;&lt;/div&gt;
+	&lt;div class="modal__container"&gt;
+		&lt;div class="modal__body"&gt;
+			&lt;div class="modal__contents"&gt;
+				&lt;p class="modal__title"&gt;신속한 업무처리를 위해 상담사를 연결해드리겠습니다.&lt;/p&gt;
+				&lt;p class="modal__desc"&gt;상담사 연결페이지로 이동합니다.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="button-rectangle__container"&gt;
+				&lt;button class="button-rectangle button-rectangle__fill"&gt;확인&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // modal -->
+			<hr>
+			<!-- ico -->
+			<div id="14">
+				<p class="category">ico (component.scss)</p>
+				<div class="contents__inner">
+					<p>30x30</p>
+					<i class="ico__30x30 ico__30x30--internet"></i>
+					<i class="ico__30x30 ico__30x30--phone"></i>
+					<i class="ico__30x30 ico__30x30--leased"></i>
+					<i class="ico__30x30 ico__30x30--counselor"></i>
+					<i class="ico__30x30 ico__30x30--reserved"></i>
+					<i class="ico__30x30 ico__30x30--blind"></i>
+					<i class="ico__30x30 ico__30x30--chat"></i>
+					<i class="ico__30x30 ico__30x30--mail"></i>
+					<i class="ico__30x30 ico__30x30--noti"></i>
+					<i class="ico__30x30 ico__30x30--complete"></i>
+					<i class="ico__30x30 ico__30x30--fail"></i>
+					<i class="ico__30x30 ico__30x30--call"></i>
+					<i class="ico__30x30 ico__30x30--time"></i>
+					<i class="ico__30x30 ico__30x30--empty"></i>
+					<i class="ico__30x30 ico__30x30--kb"></i>
+					<i class="ico__30x30 ico__30x30--sh"></i>
+					<i class="ico__30x30 ico__30x30--nh"></i>
+					<i class="ico__30x30 ico__30x30--woori"></i>
+					<i class="ico__30x30 ico__30x30--hana"></i>
+					<i class="ico__30x30 ico__30x30--ibk"></i>
+					<i class="ico__30x30 ico__30x30--sc"></i>
+					<i class="ico__30x30 ico__30x30--bnk"></i>
+					<i class="ico__30x30 ico__30x30--post"></i>
+					<i class="ico__30x30 ico__30x30--kjb"></i>
+					<i class="ico__30x30 ico__30x30--kbank"></i>
+					<i class="ico__30x30 ico__30x30--dgb"></i>
+					<i class="ico__30x30 ico__30x30--citi"></i>
+					<i class="ico__30x30 ico__30x30--keb"></i>
+					<p>20x20</p>
+					<i class="ico__20x20 ico__20x20--kb"></i>
+					<i class="ico__20x20 ico__20x20--sh"></i>
+					<i class="ico__20x20 ico__20x20--nh"></i>
+					<i class="ico__20x20 ico__20x20--woori"></i>
+					<i class="ico__20x20 ico__20x20--hana"></i>
+					<i class="ico__20x20 ico__20x20--ibk"></i>
+					<i class="ico__20x20 ico__20x20--sc"></i>
+					<i class="ico__20x20 ico__20x20--bnk"></i>
+					<i class="ico__20x20 ico__20x20--post"></i>
+					<i class="ico__20x20 ico__20x20--kjb"></i>
+					<i class="ico__20x20 ico__20x20--kbank"></i>
+					<i class="ico__20x20 ico__20x20--dgb"></i>
+					<i class="ico__20x20 ico__20x20--citi"></i>
+					<i class="ico__20x20 ico__20x20--keb"></i>
+				</div>
+<pre>
+<code>
+&lt;i class="ico__30x30 ico__30x30--internet"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--phone"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--leased"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--counselor"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--reserved"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--blind"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--chat"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--mail"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--noti"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--complete"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--fail"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--call"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--time"&gt;&lt;/i&gt;
+&lt;i class="ico__30x30 ico__30x30--empty"&gt;&lt;/i&gt;
+</code></pre>
+			</div>
+			<!-- // ico -->
+			<hr>
+			<!-- font -->
+			<div id="15">
+				<p class="category">font (global.scss)</p>
+				<div class="contents__inner">
+					<p class="font--dl">noto sans demilight</p>
+					<br>
+					<p class="font--md">noto sans medium</p>
+					<br>
+					<p class="font--bd">noto sans bold</p>
+					<br>
+					<p>내용내용내용내용내용<span class="point--cyan">포인트</span> 내용내용내용내용내용내용</p>
+				</div>
+<pre>
+<code>
+&lt;p class="font--dl"&gt;noto sans demilight&lt;/p&gt;
+&lt;p class="font--md"&gt;noto sans medium&lt;/p&gt;
+&lt;p class="font--bd"&gt;noto sans bold&lt;/p&gt;
+&lt;p&gt;내용내용내용내용내용&lt;span class="point--cyan"&gt;포인트&lt;/span&gt; 내용내용내용내용내용내용&lt;/p&gt;
+</code></pre>
+			</div>
+			<!-- // font -->
+			<hr>
+			<!-- spinner -->
+			<div id="16">
+				<p class="category">spinner (component.scss)</p>
+				<div class="contents__inner">	
+					<div class="spinner__circle">
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+						<div class="spinner__bar"></div>
+					</div>
+				</div>
+<pre>
+<code>
+&lt;div class="spinner"&gt;
+	&lt;div class="spinner__container"&gt;
+		&lt;div class="spinner__body"&gt;
+			&lt;div class="spinner__circle"&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;p class="spinner__msg"&gt;정보를 불러오는 중입니다.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			</div>
+			<!-- // spinner -->
+		</div>
+	</div>
+</body>
+</html>
