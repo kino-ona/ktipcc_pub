@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta name="theme-color" content="transparent">
-	<title>KT ARS | 휴대폰 | 청구요금, 납부문의 | 명세서, 세금계산서 발송 | 세금계산서</title>
-	<link rel="stylesheet" href="../../assets/css/ui.css">
-	<script defer src="../../assets/js/ui.js"></script>
+	<title>KT ARS | 기타 | 톡상담</title>
+	<link rel="stylesheet" href="../assets/css/ui.css">
+	<script defer src="../assets/js/ui.js"></script>
 </head>
 <body>
 	<div class="wrap">
@@ -16,26 +16,34 @@
 			<div class="header__inner">
 				<div class="header__util">
 					<a href="#" class="header__back"><span class="a11y">뒤로가기</span></a>
-					<h1 class="header__title">세금계산서</h1>
+					<h1 class="header__title">kt 모바일 채팅상담</h1>
 					<span class="header__time">00:13</span>
 				</div>
 				<div class="header__msgs">
 					<p class="header__msg">
-						<span class='highlight--cyan font-bd'>사업자번호 뒤 5자리</span>를<br>입력해 주세요.
+						<span class='highlight--cyan font-bd'>모바일 채팅상담</span> 연결을<br>안내해 드리겠습니다.
 					</p>
 				</div>
 			</div>
 		</header>
 		<!-- // header -->
 		<div class="contents">
-			<div class="auth">
-				<label for="authCode" class="a11y">사업자번호 뒤 5자리</label>
-				<input type="tel" id="authCode" class="auth__code" maxlength="5" placeholder="86011" oninput="inputEvent()">
-				<div class="button-rectangle__container">
-					<a href="#" id="confirm" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled">사용자 정보 확인</a>
+			<div class="contents__inner">
+				<div class="message">
+					<div class="message__ico">
+						<i class="ico__30x30 ico__30x30--noti"></i>
+					</div>
+					<p class="message__title">24시간 365일 챗봇(AI)과 채팅(상담사) 상담이 가능합니다.</p>
+					<p class="message__text">
+						<span class="point--cyan font--md">&ldquo;예&rdquo;</span>를 선택하시면 ARS 연결은 종료되고, 챗봇으로 바로 연결됩니다.
+					</p>
+					<div class="button-rectangle__container">
+						<a href="#" class="button-rectangle button-rectangle__fill button-rectangle__fill--gray">취소</a>
+						<a href="#" class="button-rectangle button-rectangle__fill">확인</a>
+					</div>
 				</div>
 			</div>
-    </div>
+		</div>
 		<div class="quick-nav">
 			<ul class="quick-nav__list">
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link">홈</a></li>
@@ -45,13 +53,5 @@
 			</ul>
 		</div>
 	</div>
-<script>
-	function inputEvent() {
-		var targetInput = document.getElementById("authCode");
-		var targetBtn = document.getElementById("confirm");
-		targetInput.value = targetInput.value.replace(/[^0-9.]/g, '');
-		if (targetInput.value) {targetBtn.classList.remove("button-rectangle__fill--disabled")} else {targetBtn.classList.add("button-rectangle__fill--disabled")}
-	}
-	</script>
 </body>
 </html>

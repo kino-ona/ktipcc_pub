@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta name="theme-color" content="transparent">
-	<title>KT ARS | 휴대폰 | 청구요금, 납부문의 | 명세서, 세금계산서 발송 | 세금계산서</title>
+	<title>KT ARS | 설치변경, 요금 등 일반문의 | 이사, 설치장소 변경</title>
 	<link rel="stylesheet" href="../../assets/css/ui.css">
 	<script defer src="../../assets/js/ui.js"></script>
 </head>
@@ -16,26 +16,43 @@
 			<div class="header__inner">
 				<div class="header__util">
 					<a href="#" class="header__back"><span class="a11y">뒤로가기</span></a>
-					<h1 class="header__title">세금계산서</h1>
+					<h1 class="header__title">이사, 설치장소 변경</h1>
 					<span class="header__time">00:13</span>
 				</div>
 				<div class="header__msgs">
 					<p class="header__msg">
-						<span class='highlight--cyan font-bd'>사업자번호 뒤 5자리</span>를<br>입력해 주세요.
+						<span class='highlight--cyan font-bd'>이사, 설치장소 변경</span>에 대해 궁금한 것 있으신가요?
 					</p>
 				</div>
 			</div>
 		</header>
 		<!-- // header -->
 		<div class="contents">
-			<div class="auth">
-				<label for="authCode" class="a11y">사업자번호 뒤 5자리</label>
-				<input type="tel" id="authCode" class="auth__code" maxlength="5" placeholder="86011" oninput="inputEvent()">
-				<div class="button-rectangle__container">
-					<a href="#" id="confirm" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled">사용자 정보 확인</a>
+			<div class="contents__inner">
+				<div class="service">
+					<ul class="service__list">
+						<li class="service__item">
+							<a href="#" class="service__link">
+								<span class="service__title">설치장소 변경 바로신청</span>
+								<i class="service__arrow service__arrow--right"></i>
+							</a>
+						</li>
+						<li class="service__item">
+							<a href="#" class="service__link">
+								<span class="service__title">일시정지, 해제 바로신청</span>
+								<i class="service__arrow service__arrow--right"></i>
+							</a>
+						</li>
+						<li class="service__item">
+							<a href="#" class="service__link">
+								<span class="service__title">상담사 연결</span>
+								<i class="service__arrow service__arrow--right"></i>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-    </div>
+		</div>
 		<div class="quick-nav">
 			<ul class="quick-nav__list">
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link">홈</a></li>
@@ -45,13 +62,5 @@
 			</ul>
 		</div>
 	</div>
-<script>
-	function inputEvent() {
-		var targetInput = document.getElementById("authCode");
-		var targetBtn = document.getElementById("confirm");
-		targetInput.value = targetInput.value.replace(/[^0-9.]/g, '');
-		if (targetInput.value) {targetBtn.classList.remove("button-rectangle__fill--disabled")} else {targetBtn.classList.add("button-rectangle__fill--disabled")}
-	}
-	</script>
 </body>
 </html>
