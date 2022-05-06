@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta name="theme-color" content="transparent">
-	<title>KT ARS | 휴대폰 | 분실정지, 보험, 통화품질 | 분실정지 신청 | 수발신정지</title>
-	<link rel="stylesheet" href="../../assets/css/ui.css">
-	<script defer src="../../assets/js/ui.js"></script>
+	<title>KT ARS | 사용자 인증</title>
+	<link rel="stylesheet" href="../assets/css/ui.css">
+	<script defer src="../assets/js/ui.js"></script>
 </head>
 <body>
 	<div class="wrap">
@@ -16,31 +16,24 @@
 			<div class="header__inner">
 				<div class="header__util">
 					<a href="#" class="header__back"><span class="a11y">뒤로가기</span>
-						<h1 class="header__title">수/발신 정지</h1>
+						<h1 class="header__title">사용자 인증</h1>
 					</a>
 					<span class="header__time">00:13</span>
 				</div>
 				<div class="header__msgs">
 					<p class="header__msg">
-						<span class='highlight--cyan font-bd'>자동 분실정지 등록</span>이<br>불가합니다.
+						<span class='highlight--cyan font-bd'>사용자 인증</span>에 실패하였습니다.<br>다시 한번 입력해 주세요.
 					</p>
 				</div>
 			</div>
 		</header>
 		<!-- // header -->
 		<div class="contents">
-			<div class="contents__inner">
-				<div class="message">
-					<div class="message__ico">
-						<i class="ico__30x30 ico__30x30--fail"></i>
-					</div>
-					<p class="message__title">죄송합니다.</p>
-					<p class="message__text">자세한 내용은 상담사 연결을 통해 <br>확인해주세요.</p>
-				</div>
-			</div>
-			<div class="contents__etc">
+			<div class="auth">
+				<label for="authCode" class="a11y">사업자번호 뒤 5자리</label>
+				<input type="tel" id="authCode" class="auth__code" maxlength="5" placeholder="86011" oninput="inputEvent()">
 				<div class="button-rectangle__container">
-					<a href="#" class="button-rectangle button-rectangle__line"><i class="ico__30x30 ico__30x30--call"></i>상담사 연결</a>
+					<a href="#" id="confirm" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled">가입자 정보 확인</a>
 				</div>
 			</div>
 		</div>
@@ -53,5 +46,13 @@
 			</ul>
 		</div>
 	</div>
+	<script>
+	function inputEvent() {
+		var targetInput = document.getElementById("authCode");
+		var targetBtn = document.getElementById("confirm");
+		targetInput.value = targetInput.value.replace(/[^0-9.]/g, '');
+		if (targetInput.value) {targetBtn.classList.remove("button-rectangle__fill--disabled")} else {targetBtn.classList.add("button-rectangle__fill--disabled")}
+	}
+	</script>
 </body>
 </html>

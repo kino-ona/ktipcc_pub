@@ -619,10 +619,15 @@ button {
 	        flex: 1;
 	text-align: center;
 }
+.quick-nav__item:first-child {
+	-webkit-box-flex: 0.6;
+	    -ms-flex: 0.6;
+	        flex: 0.6;
+}
 
 .quick-nav__link {
 	color: #777;
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 26px;
 }
 
@@ -739,8 +744,8 @@ button {
 .bullet__item {
 	position: relative;
 	color: #777;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 15px;
+	line-height: 23px;
 }
 .bullet__item:before {
 	content: "";
@@ -777,7 +782,7 @@ button {
 	padding-left: 19px;
 }
 .bullet__item--info:before {
-	top: 6px;
+	top: 4px;
 	width: 15px;
 	height: 15px;
 	background: url("../images/icons.png") no-repeat 0 -265px;
@@ -852,7 +857,7 @@ button {
 .bullet__item--black:before {
 	color: #000;
 }
-.bullet__item--black:not([calss*=info]):not([class*=dash]):before {
+.bullet__item--black:not([class*=info]):not([class*=dash]):before {
 	background-color: #000;
 }
 
@@ -885,10 +890,11 @@ button {
 	max-width: calc(100% - 10px);
 	min-height: 50px;
 	margin: 0 0 10px 10px;
-	padding: 12px 20px;
+	padding: 9px 10px;
 	background-color: #fff;
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 26px;
+	letter-spacing: -1.5px;
 	text-align: center;
 	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
 }
@@ -899,6 +905,7 @@ button {
 .button-rectangle__fill {
 	background-color: #2CBBB6;
 	color: #fff;
+	letter-spacing: -1px;
 }
 .button-rectangle__fill:not(.button-rectangle__fill--gray)[disabled] {
 	background-color: #CDD1D1;
@@ -1237,8 +1244,17 @@ button {
 	line-height: 24px;
 }
 .accordion__panel > .accordion__inner {
+	position: relative;
 	padding: 20px 0;
-	border-top: 1px dotted #000;
+}
+.accordion__panel > .accordion__inner::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.5) 1px, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0) 6px);
 }
 .accordion__panel .accordion__text:not(:first-child) {
 	margin-top: 15px;
@@ -1260,7 +1276,7 @@ button {
 }
 .table__list th,
 .table__list td {
-	padding: 10px;
+	padding: 10px 5px;
 	border-bottom: 1px solid #E0E0E0;
 	background-color: #fff;
 	font-size: 14px;
@@ -1274,6 +1290,12 @@ button {
 .table__list th {
 	text-align: center;
 	font-family: "NS MD", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
+}
+.table__list td {
+	text-align: left;
+}
+.table__list td.td__long-text {
+	text-align: left !important;
 }
 .table__list thead + tbody td {
 	text-align: center;
@@ -1626,7 +1648,7 @@ button {
 	border: 0 !important;
 	font-weight: bold;
 	font-size: 32px !important;
-	letter-spacing: 6.4px;
+	letter-spacing: 1.4px;
 	text-align: center;
 	-webkit-box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
 	        box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.12);
@@ -1675,9 +1697,18 @@ button {
 }
 
 .message__bottom {
+	position: relative;
 	margin-top: 20px;
 	padding-top: 20px;
-	border-top: 1px dotted #000;
+}
+.message__bottom::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.5) 1px, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0) 6px);
 }
 
 /* notice */
@@ -1828,7 +1859,7 @@ button {
 	padding-bottom: 0;
 }
 .account__list:not(:last-child) {
-	border-bottom: 1px dotted #000;
+	border-bottom: 1px dotted #909090;
 }
 
 .account__set .account__row {
@@ -1844,7 +1875,7 @@ button {
 	padding: 14px 0;
 }
 .account__set .account__row:not(:first-child) {
-	border-top: 1px dotted #000;
+	border-top: 1px dotted #909090;
 }
 .account__set .account__row .account__right {
 	display: -webkit-box;
@@ -1861,6 +1892,7 @@ button {
 	margin-left: 5px;
 }
 .account__set .account__unit {
+	color: #000;
 	font-size: 16px;
 	line-height: 24px;
 	font-family: "NS DL", "Malgun Gothic", Dotum, "돋움", AppleGothicNeoSD, "Apple SD 산돌고딕 Neo", "굴림", arial, sans-serif !important;
