@@ -908,6 +908,9 @@
 						<button type="button" class="button-rectangle button-rectangle__line"><i class="ico__30x30 ico__30x30--call"></i>실시간 요금조회</button>
 					</div>
 					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__line--active"><i class="ico__30x30 ico__30x30--call--active"></i>실시간 요금조회</button>
+					</div>
+					<div class="button-rectangle__container">
 						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
 						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
 						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
@@ -917,6 +920,17 @@
 						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
 						<button type="button" class="button-rectangle button-rectangle__line">실시간 요금조회</button>
 					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__line" disabled>실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line" disabled>실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line" disabled>실시간 요금조회</button>
+					</div>
+					<div class="button-rectangle__container">
+						<button type="button" class="button-rectangle button-rectangle__line--active">실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line--active">실시간 요금조회</button>
+						<button type="button" class="button-rectangle button-rectangle__line--active">실시간 요금조회</button>
+					</div>
+
 					<a href="#" class="button-radius">유선상품 ARS 보기</a>
 					<a href="#" class="button-underline">플라자/대리점 위치찾기 바로가기</a>
 				</div>
@@ -939,6 +953,9 @@
 	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
 &lt;/div&gt;
 &lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line--active"&gt;&lt;i class="ico__30x30 ico__30x30--call--active"&gt;&lt;/i&gt;실시간 요금조회&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
 	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
 	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
 	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
@@ -948,6 +965,18 @@
 	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
 	&lt;button type="button" class="button-rectangle button-rectangle__line"&gt;실시간 요금조회&lt;/button&gt;
 &lt;/div&gt;
+
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line" disabled&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line" disabled&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line" disabled&gt;실시간 요금조회&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="button-rectangle__container"&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line--active"&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line--active"&gt;실시간 요금조회&lt;/button&gt;
+	&lt;button type="button" class="button-rectangle button-rectangle__line--active"&gt;실시간 요금조회&lt;/button&gt;
+&lt;/div&gt;
+
 &lt;a href="#" class="button-radius"&gt;유선상품 ARS 보기&lt;/a&gt;
 &lt;a href="#" class="button-underline"&gt;플라자/대리점 위치찾기 바로가기&lt;/a&gt;
 </code></pre>
@@ -1495,7 +1524,7 @@
 			<div id="13">
 				<p class="category">modal (component.scss)</p>
 				<button type="button" class="button-radius">modal</button>
-				<div class="modal" style="display: none;">
+				<div id="modal" class="modal" style="display: none;">
 					<div class="modal__dimmed"></div>
 					<div class="modal__container">
 						<div class="modal__body">
@@ -1504,7 +1533,7 @@
 								<p class="modal__desc">상담사 연결페이지로 이동합니다.</p>
 							</div>
 							<div class="button-rectangle__container">
-								<button class="button-rectangle button-rectangle__fill">확인</button>
+								<button class="button-rectangle button-rectangle__fill" onclick="closeWin()">확인</button>
 							</div>
 						</div>
 					</div>
@@ -1520,12 +1549,53 @@
 				&lt;p class="modal__desc"&gt;상담사 연결페이지로 이동합니다.&lt;/p&gt;
 			&lt;/div&gt;
 			&lt;div class="button-rectangle__container"&gt;
-				&lt;button class="button-rectangle button-rectangle__fill"&gt;확인&lt;/button&gt;
+				&lt;button class="button-rectangle button-rectangle__fill" onclick="closeWin()" &gt;확인&lt;/button&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+			</div>
+
+			<div id="17">
+				<p class="category">modal (component.scss)</p>
+				<button type="button" class="button-radius">modal2 - 오늘하루 열지않기</button>
+				<div id="modal" class="modal" style="display: none">
+					<div class="modal__dimmed"></div>
+					<div class="modal__container">
+						<div class="modal__body">
+							<div class="modal__contents">
+								<p class="modal__title">신속한 업무처리를 위해 상담사를 연결해드리겠습니다.</p>
+								<p class="modal__desc">상담사 연결페이지로 이동합니다.</p>
+							</div>
+							<div class="button-rectangle__container">
+								<button class="button-rectangle button-rectangle--not-open-today" onclick="todaycloseWin()";>오늘 하루 열지 않기</button>
+								<button class="button-rectangle button-rectangle__fill" onclick="closeWin()">확인</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+	<pre>
+		<code>
+		&lt;div id="modal"&gt;
+			&lt;div class="modal__dimmed"&gt;&lt;/div&gt;
+			&lt;div class="modal__container"&gt;
+				&lt;div class="modal__body"&gt;
+					&lt;div class="modal__contents"&gt;
+						&lt;p class="modal__title"&gt;신속한 업무처리를 위해 상담사를 연결해드리겠습니다.&lt;/p&gt;
+						&lt;p class="modal__desc"&gt;상담사 연결페이지로 이동합니다.&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class="button-rectangle__container"&gt;
+						&lt;button class="button-rectangle button-rectangle--not-open-today" onclick="todaycloseWin()" &gt;오늘 하루 열지 않기&lt;/button&gt;
+						&lt;button class="button-rectangle button-rectangle__fill" onclick="closeWin()"&gt;확인&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		</code></pre>
+
+
 			</div>
 			<!-- // modal -->
 			<hr>
@@ -1624,44 +1694,25 @@
 			<div id="16">
 				<p class="category">spinner (component.scss)</p>
 				<div class="contents__inner">	
-					<div class="spinner__circle">
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-						<div class="spinner__bar"></div>
-					</div>
+
+					<div id="spinner"></div>
+					<script>
+						// window.onload = function() {
+						// 	loadingFn()
+						// }
+					</script>
 				</div>
 <pre>
 <code>
-&lt;div class="spinner"&gt;
-	&lt;div class="spinner__container"&gt;
-		&lt;div class="spinner__body"&gt;
-			&lt;div class="spinner__circle"&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-				&lt;div class="spinner__bar"&gt;&lt;/div&gt;
-			&lt;/div&gt;
-			&lt;p class="spinner__msg"&gt;정보를 불러오는 중입니다.&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
+&lt;div id="spinner"&gt;&lt;/div&gt;
+&lt;p class="spinner__msg"&gt;정보를 불러오는 중입니다.&lt;/p&gt;
+&lt;script&gt;
+	window.onload = function() {
+		loadingFn() // 로딩 호출 함수
+	}
+&lt;/script&gt;
+</div>
+
 </code></pre>
 			</div>
 			<!-- // spinner -->

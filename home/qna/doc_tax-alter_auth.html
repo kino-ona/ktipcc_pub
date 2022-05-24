@@ -13,27 +13,30 @@
 	<div class="wrap">
 		<!-- header -->
 		<header class="header">
-			<div class="header__inner">
-				<div class="header__util">
-					<a href="#" class="header__back"><span class="a11y">뒤로가기</span>
-						<h1 class="header__title">세금계산서</h1>
-					</a>
-					<span class="header__time">00:13</span>
-				</div>
-				<div class="header__msgs">
-					<p class="header__msg">
-						<span class='highlight--cyan font-bd'>사업자번호 뒤 5자리</span>를<br>입력해 주세요.
-					</p>
-				</div>
+		<div class="header__inner">
+			<div class="header__util">
+				<a href="#" onclick="history.go(-1); return false" class="header__back"><span class="a11y">뒤로가기</span>
+					<h1 class="header__title">세금계산서</h1>
+				</a>
+				<span class="header__time">00:13</span>
 			</div>
-		</header>
+			<div class="header__msgs">
+				<p class="header__msg">
+					<span class='highlight--cyan font-bd'>사업자번호 뒤 5자리</span>를<br>입력해 주세요.
+				</p>
+			</div>
+		</div>
+	</header>
+
+<script type="text/javascript">
+</script>
 		<!-- // header -->
 		<div class="contents">
 			<div class="auth">
 				<label for="authCode" class="a11y">사업자번호 뒤 5자리</label>
 				<input type="tel" id="authCode" class="auth__code" maxlength="5" placeholder="86011" oninput="inputEvent()">
 				<div class="button-rectangle__container">
-					<a href="#" id="confirm" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled">가입자 정보 확인</a>
+					<a href="./qna/doc_tax.html" id="confirm" class="button-rectangle button-rectangle__fill button-rectangle__fill--disabled">가입자 정보 확인</a>
 				</div>
 			</div>
 			<div class="contents__etc">
@@ -47,8 +50,8 @@
 		<div class="quick-nav">
 			<ul class="quick-nav__list">
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link">홈</a></li>
-				<li class="quick-nav__item"><a href="#" class="quick-nav__link">채팅상담</a></li>
-				<li class="quick-nav__item"><a href="#" class="quick-nav__link">상담내역</a></li>
+				<li class="quick-nav__item"><a href="../../etc/chat.html" class="quick-nav__link">채팅상담</a></li>
+				<li class="quick-nav__item"><a href="../../mobile/consult/consult_list.html" class="quick-nav__link">상담내역</a></li>
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link quick-nav__link--call">통화종료</a></li>
 			</ul>
 		</div>

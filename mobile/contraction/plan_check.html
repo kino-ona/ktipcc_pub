@@ -13,20 +13,23 @@
 	<div class="wrap">
 		<!-- header -->
 		<header class="header">
-			<div class="header__inner">
-				<div class="header__util">
-					<a href="#" class="header__back"><span class="a11y">뒤로가기</span>
-						<h1 class="header__title">요금제 확인</h1>
-					</a>
-					<span class="header__time">00:13</span>
-				</div>
-				<div class="header__msgs">
-					<p class="header__msg">
-						현재 고객님이 사용하시는<br><span class='highlight--cyan font-bd'>요금 상품</span>입니다.
-					</p>
-				</div>
+		<div class="header__inner">
+			<div class="header__util">
+				<a href="#" onclick="history.go(-1); return false" class="header__back"><span class="a11y">뒤로가기</span>
+					<h1 class="header__title">요금제 확인</h1>
+				</a>
+				<span class="header__time">00:13</span>
 			</div>
-		</header>
+			<div class="header__msgs">
+				<p class="header__msg">
+					현재 고객님이 사용하시는<br><span class='highlight--cyan font-bd'>요금 상품</span>입니다.
+				</p>
+			</div>
+		</div>
+	</header>
+
+<script type="text/javascript">
+</script>
 		<!-- // header -->
 		<div class="contents">
 			<div class="contents__inner">
@@ -55,7 +58,7 @@
 			</div>
 			<div class="contents__etc">
 				<div class="button-rectangle__container">
-					<a href="#" class="button-rectangle button-rectangle__line">요금제 추천</a>
+					<a href="./plan_recommend.html" class="button-rectangle button-rectangle__line">요금제 추천</a>
 					<a href="#" class="button-rectangle button-rectangle__line">요금상품 변경</a>
 					<a href="#" class="button-rectangle button-rectangle__line button-rectangle--full">온라인 바로처리</a>
 				</div>
@@ -64,8 +67,8 @@
 		<div class="quick-nav">
 			<ul class="quick-nav__list">
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link">홈</a></li>
-				<li class="quick-nav__item"><a href="#" class="quick-nav__link">채팅상담</a></li>
-				<li class="quick-nav__item"><a href="#" class="quick-nav__link">상담내역</a></li>
+				<li class="quick-nav__item"><a href="../../etc/chat.html" class="quick-nav__link">채팅상담</a></li>
+				<li class="quick-nav__item"><a href="../../mobile/consult/consult_list.html" class="quick-nav__link">상담내역</a></li>
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link quick-nav__link--call">통화종료</a></li>
 			</ul>
 		</div>

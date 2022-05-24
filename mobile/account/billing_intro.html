@@ -13,20 +13,23 @@
 	<div class="wrap">
 		<!-- header -->
 		<header class="header">
-			<div class="header__inner">
-				<div class="header__util">
-					<a href="#" class="header__back"><span class="a11y">뒤로가기</span>
-						<h1 class="header__title">요금납부</h1>
-					</a>
-					<span class="header__time">00:13</span>
-				</div>
-				<div class="header__msgs">
-					<p class="header__msg">
-						<span class='highlight--cyan font-bd'>요금납부</span>에 대해<br>궁금한 것 있으신가요?
-					</p>
-				</div>
+		<div class="header__inner">
+			<div class="header__util">
+				<a href="#" onclick="history.go(-1); return false" class="header__back"><span class="a11y">뒤로가기</span>
+					<h1 class="header__title">요금납부</h1>
+				</a>
+				<span class="header__time">00:13</span>
 			</div>
-		</header>
+			<div class="header__msgs">
+				<p class="header__msg">
+					<span class='highlight--cyan font-bd'>요금납부</span>에 대해<br>궁금한 것 있으신가요?
+				</p>
+			</div>
+		</div>
+	</header>
+
+<script type="text/javascript">
+</script>
 		<!-- // header -->
 		<div class="contents">
 			<div class="contents__inner">
@@ -39,13 +42,13 @@
 							</a>
 						</li>
 						<li class="service__item">
-							<a href="#" class="service__link">
+							<a href="../account/billing_account.html" class="service__link">
 								<span class="service__title">납부 전용계좌 안내</span>
 								<i class="service__arrow service__arrow--right"></i>
 							</a>
 						</li>
 						<li class="service__item">
-							<a href="#" class="service__link">
+							<a href="../../etc/consult_call.html" class="service__link">
 								<span class="service__title">상담사 연결</span>
 								<i class="service__arrow service__arrow--right"></i>
 							</a>
@@ -64,8 +67,8 @@
 		<div class="quick-nav">
 			<ul class="quick-nav__list">
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link">홈</a></li>
-				<li class="quick-nav__item"><a href="#" class="quick-nav__link">채팅상담</a></li>
-				<li class="quick-nav__item"><a href="#" class="quick-nav__link">상담내역</a></li>
+				<li class="quick-nav__item"><a href="../../etc/chat.html" class="quick-nav__link">채팅상담</a></li>
+				<li class="quick-nav__item"><a href="../../mobile/consult/consult_list.html" class="quick-nav__link">상담내역</a></li>
 				<li class="quick-nav__item"><a href="#" class="quick-nav__link quick-nav__link--call">통화종료</a></li>
 			</ul>
 		</div>
